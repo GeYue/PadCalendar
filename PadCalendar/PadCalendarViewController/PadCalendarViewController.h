@@ -10,4 +10,6 @@
 
 @interface PadCalendarViewController : UIViewController
 
+@property (nonatomic, strong) NSMutableArray *arrayWithEvents;
+
 @end

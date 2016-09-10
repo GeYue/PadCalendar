@@ -15,6 +15,9 @@
 		AC3731681D83B6B700D7EB04 /* PadCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3731671D83B6B700D7EB04 /* PadCalendarTests.m */; };
 		AC3731731D83B6B700D7EB04 /* PadCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3731721D83B6B700D7EB04 /* PadCalendarUITests.m */; };
 		AC37318B1D83BF1D00D7EB04 /* PadCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC37318A1D83BF1D00D7EB04 /* PadCalendarViewController.m */; };
+		AC3731961D83DF1300D7EB04 /* UIColor+PadMoreColors.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3731951D83DF1300D7EB04 /* UIColor+PadMoreColors.m */; };
+		AC37319A1D83E1BD00D7EB04 /* PadRedAndWhiteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3731991D83E1BD00D7EB04 /* PadRedAndWhiteButton.m */; };
+		AC37319D1D83E58100D7EB04 /* UIImage+PadCustomMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = AC37319C1D83E58100D7EB04 /* UIImage+PadCustomMethods.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,13 @@
 		AC3731741D83B6B700D7EB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC3731891D83BF1D00D7EB04 /* PadCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadCalendarViewController.h; sourceTree = "<group>"; };
 		AC37318A1D83BF1D00D7EB04 /* PadCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadCalendarViewController.m; sourceTree = "<group>"; };
+		AC37318D1D83DA8C00D7EB04 /* PadCalendars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PadCalendars.h; sourceTree = "<group>"; };
+		AC3731941D83DF1300D7EB04 /* UIColor+PadMoreColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PadMoreColors.h"; path = "PadCategories/UIColor+PadMoreColors.h"; sourceTree = "<group>"; };
+		AC3731951D83DF1300D7EB04 /* UIColor+PadMoreColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PadMoreColors.m"; path = "PadCategories/UIColor+PadMoreColors.m"; sourceTree = "<group>"; };
+		AC3731981D83E1BD00D7EB04 /* PadRedAndWhiteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadRedAndWhiteButton.h; sourceTree = "<group>"; };
+		AC3731991D83E1BD00D7EB04 /* PadRedAndWhiteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadRedAndWhiteButton.m; sourceTree = "<group>"; };
+		AC37319B1D83E58100D7EB04 /* UIImage+PadCustomMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PadCustomMethods.h"; sourceTree = "<group>"; };
+		AC37319C1D83E58100D7EB04 /* UIImage+PadCustomMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PadCustomMethods.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 		AC37314C1D83B6B700D7EB04 /* PadCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				AC37318C1D83DA3100D7EB04 /* PadCalendars */,
 				AC3731881D83BE9200D7EB04 /* PadCalendarViewController */,
 				AC3731501D83B6B700D7EB04 /* AppDelegate.h */,
 				AC3731511D83B6B700D7EB04 /* AppDelegate.m */,
@@ -146,6 +157,44 @@
 				AC37318A1D83BF1D00D7EB04 /* PadCalendarViewController.m */,
 			);
 			path = PadCalendarViewController;
+			sourceTree = "<group>";
+		};
+		AC37318C1D83DA3100D7EB04 /* PadCalendars */ = {
+			isa = PBXGroup;
+			children = (
+				AC37318D1D83DA8C00D7EB04 /* PadCalendars.h */,
+				AC37318E1D83DBD900D7EB04 /* Utils */,
+			);
+			path = PadCalendars;
+			sourceTree = "<group>";
+		};
+		AC37318E1D83DBD900D7EB04 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AC3731971D83E12700D7EB04 /* PadColorButtons */,
+				AC37318F1D83DC1800D7EB04 /* PadCategories */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AC37318F1D83DC1800D7EB04 /* PadCategories */ = {
+			isa = PBXGroup;
+			children = (
+				AC3731941D83DF1300D7EB04 /* UIColor+PadMoreColors.h */,
+				AC3731951D83DF1300D7EB04 /* UIColor+PadMoreColors.m */,
+				AC37319B1D83E58100D7EB04 /* UIImage+PadCustomMethods.h */,
+				AC37319C1D83E58100D7EB04 /* UIImage+PadCustomMethods.m */,
+			);
+			name = PadCategories;
+			sourceTree = "<group>";
+		};
+		AC3731971D83E12700D7EB04 /* PadColorButtons */ = {
+			isa = PBXGroup;
+			children = (
+				AC3731981D83E1BD00D7EB04 /* PadRedAndWhiteButton.h */,
+				AC3731991D83E1BD00D7EB04 /* PadRedAndWhiteButton.m */,
+			);
+			path = PadColorButtons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +327,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC3731961D83DF1300D7EB04 /* UIColor+PadMoreColors.m in Sources */,
+				AC37319D1D83E58100D7EB04 /* UIImage+PadCustomMethods.m in Sources */,
+				AC37319A1D83E1BD00D7EB04 /* PadRedAndWhiteButton.m in Sources */,
 				AC3731521D83B6B700D7EB04 /* AppDelegate.m in Sources */,
 				AC37314F1D83B6B700D7EB04 /* main.m in Sources */,
 				AC37318B1D83BF1D00D7EB04 /* PadCalendarViewController.m in Sources */,
