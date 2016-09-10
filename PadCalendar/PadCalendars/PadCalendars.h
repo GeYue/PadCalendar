@@ -9,6 +9,8 @@
 #ifndef PadCalendars_h
 #define PadCalendars_h
 
+#import "PadAddEventPopoverButton.h"
+
 #import "UIColor+PadMoreColors.h"
 #import "PadRedAndWhiteButton.h"
 #import "UIImage+PadCustomMethods.h"

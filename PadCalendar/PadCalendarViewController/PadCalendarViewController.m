@@ -70,13 +70,30 @@
     UIBarButtonItem *barButtonWeek = [[UIBarButtonItem alloc] initWithCustomView:buttonWeek];
     UIBarButtonItem *barButtonDay = [[UIBarButtonItem alloc] initWithCustomView:buttonDay];
     
-    //UIBarButtonItem *barButtonAdd = [[UIBarButtonItem alloc] initWithCustomView:buttonAdd];
+    PadAddEventPopoverButton *buttonAdd = [[PadAddEventPopoverButton alloc] initWithFrame:CGRectMake(0., 0., 30., 44)];
     
-    [self.navigationItem setRightBarButtonItems:@[/*barButtonAdd,*/ fixedItem, barButtonYear, barButtonMonth, barButtonWeek, barButtonDay]];
+    UIBarButtonItem *barButtonAdd = [[UIBarButtonItem alloc] initWithCustomView:buttonAdd];
+    
+    [self.navigationItem setRightBarButtonItems:@[barButtonAdd, fixedItem, barButtonYear, barButtonMonth, barButtonWeek, barButtonDay]];
 }
 
 - (void) addLeftBarButtonItems {
+    UIBarButtonItem *fixedItem = [[UIBarButtonItem alloc]
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
+                                  target:nil action:nil];
+    fixedItem.width = 30;
+
+    PadRedAndWhiteButton *buttonToday = [[PadRedAndWhiteButton alloc] initWithFrame:CGRectMake(0., 0., 80., 30)];
+    [buttonToday addTarget:self action:@selector(buttonTodayAction:) forControlEvents:UIControlEventTouchUpInside];
+    [buttonToday setTitle:@"Today" forState:UIControlStateNormal];
+    UIBarButtonItem *barButtonToday = [[UIBarButtonItem alloc] initWithCustomView:buttonToday];
     
+    _labelWithMonthAndYear = [[UILabel alloc] initWithFrame:CGRectMake(0., 0., 170., 30)];
+    [self.labelWithMonthAndYear setTextColor:[UIColor redColor]];
+    [self.labelWithMonthAndYear setFont:buttonToday.titleLabel.font];
+    UIBarButtonItem *barButtonLabel = [[UIBarButtonItem alloc] initWithCustomView:self.labelWithMonthAndYear];
+    
+    [self.navigationItem setLeftBarButtonItems:@[barButtonLabel, fixedItem, barButtonToday]];
 }
 
 - (PadRedAndWhiteButton *) calendarButtonWithTitle:(NSString *)title {
@@ -95,6 +112,10 @@
 #pragma mark - Button Action
 
 - (IBAction)buttonYearMonthWeekDayAction:(id)sender {
+    
+}
+
+- (IBAction)buttonTodayAction:(id)sender {
     
 }
 
