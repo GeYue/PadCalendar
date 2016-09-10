@@ -59,8 +59,8 @@
 		AC3731951D83DF1300D7EB04 /* UIColor+PadMoreColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PadMoreColors.m"; path = "PadCategories/UIColor+PadMoreColors.m"; sourceTree = "<group>"; };
 		AC3731981D83E1BD00D7EB04 /* PadRedAndWhiteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadRedAndWhiteButton.h; sourceTree = "<group>"; };
 		AC3731991D83E1BD00D7EB04 /* PadRedAndWhiteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadRedAndWhiteButton.m; sourceTree = "<group>"; };
-		AC37319B1D83E58100D7EB04 /* UIImage+PadCustomMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PadCustomMethods.h"; sourceTree = "<group>"; };
-		AC37319C1D83E58100D7EB04 /* UIImage+PadCustomMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PadCustomMethods.m"; sourceTree = "<group>"; };
+		AC37319B1D83E58100D7EB04 /* UIImage+PadCustomMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PadCustomMethods.h"; path = "PadCategories/UIImage+PadCustomMethods.h"; sourceTree = "<group>"; };
+		AC37319C1D83E58100D7EB04 /* UIImage+PadCustomMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PadCustomMethods.m"; path = "PadCategories/UIImage+PadCustomMethods.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
