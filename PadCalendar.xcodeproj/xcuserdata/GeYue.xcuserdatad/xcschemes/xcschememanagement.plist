@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>PadCalendar.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>AC3731491D83B6B700D7EB04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AC3731621D83B6B700D7EB04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AC37316D1D83B6B700D7EB04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

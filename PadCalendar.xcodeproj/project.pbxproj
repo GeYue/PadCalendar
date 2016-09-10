@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC37314F1D83B6B700D7EB04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC37314E1D83B6B700D7EB04 /* main.m */; };
+		AC3731521D83B6B700D7EB04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3731511D83B6B700D7EB04 /* AppDelegate.m */; };
+		AC3731581D83B6B700D7EB04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3731561D83B6B700D7EB04 /* Main.storyboard */; };
+		AC37315A1D83B6B700D7EB04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC3731591D83B6B700D7EB04 /* Assets.xcassets */; };
+		AC37315D1D83B6B700D7EB04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC37315B1D83B6B700D7EB04 /* LaunchScreen.storyboard */; };
+		AC3731681D83B6B700D7EB04 /* PadCalendarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3731671D83B6B700D7EB04 /* PadCalendarTests.m */; };
+		AC3731731D83B6B700D7EB04 /* PadCalendarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3731721D83B6B700D7EB04 /* PadCalendarUITests.m */; };
+		AC37318B1D83BF1D00D7EB04 /* PadCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC37318A1D83BF1D00D7EB04 /* PadCalendarViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC3731641D83B6B700D7EB04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC3731421D83B6B700D7EB04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC3731491D83B6B700D7EB04;
+			remoteInfo = PadCalendar;
+		};
+		AC37316F1D83B6B700D7EB04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC3731421D83B6B700D7EB04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC3731491D83B6B700D7EB04;
+			remoteInfo = PadCalendar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC37314A1D83B6B700D7EB04 /* PadCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PadCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC37314E1D83B6B700D7EB04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AC3731501D83B6B700D7EB04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AC3731511D83B6B700D7EB04 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AC3731571D83B6B700D7EB04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC3731591D83B6B700D7EB04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC37315C1D83B6B700D7EB04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC37315E1D83B6B700D7EB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC3731631D83B6B700D7EB04 /* PadCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PadCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC3731671D83B6B700D7EB04 /* PadCalendarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PadCalendarTests.m; sourceTree = "<group>"; };
+		AC3731691D83B6B700D7EB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC37316E1D83B6B700D7EB04 /* PadCalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PadCalendarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC3731721D83B6B700D7EB04 /* PadCalendarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PadCalendarUITests.m; sourceTree = "<group>"; };
+		AC3731741D83B6B700D7EB04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC3731891D83BF1D00D7EB04 /* PadCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadCalendarViewController.h; sourceTree = "<group>"; };
+		AC37318A1D83BF1D00D7EB04 /* PadCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadCalendarViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC3731471D83B6B700D7EB04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC3731601D83B6B700D7EB04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC37316B1D83B6B700D7EB04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC3731411D83B6B700D7EB04 = {
+			isa = PBXGroup;
+			children = (
+				AC37314C1D83B6B700D7EB04 /* PadCalendar */,
+				AC3731661D83B6B700D7EB04 /* PadCalendarTests */,
+				AC3731711D83B6B700D7EB04 /* PadCalendarUITests */,
+				AC37314B1D83B6B700D7EB04 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC37314B1D83B6B700D7EB04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC37314A1D83B6B700D7EB04 /* PadCalendar.app */,
+				AC3731631D83B6B700D7EB04 /* PadCalendarTests.xctest */,
+				AC37316E1D83B6B700D7EB04 /* PadCalendarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC37314C1D83B6B700D7EB04 /* PadCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				AC3731881D83BE9200D7EB04 /* PadCalendarViewController */,
+				AC3731501D83B6B700D7EB04 /* AppDelegate.h */,
+				AC3731511D83B6B700D7EB04 /* AppDelegate.m */,
+				AC3731561D83B6B700D7EB04 /* Main.storyboard */,
+				AC3731591D83B6B700D7EB04 /* Assets.xcassets */,
+				AC37315B1D83B6B700D7EB04 /* LaunchScreen.storyboard */,
+				AC37315E1D83B6B700D7EB04 /* Info.plist */,
+				AC37314D1D83B6B700D7EB04 /* Supporting Files */,
+			);
+			path = PadCalendar;
+			sourceTree = "<group>";
+		};
+		AC37314D1D83B6B700D7EB04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC37314E1D83B6B700D7EB04 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC3731661D83B6B700D7EB04 /* PadCalendarTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC3731671D83B6B700D7EB04 /* PadCalendarTests.m */,
+				AC3731691D83B6B700D7EB04 /* Info.plist */,
+			);
+			path = PadCalendarTests;
+			sourceTree = "<group>";
+		};
+		AC3731711D83B6B700D7EB04 /* PadCalendarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AC3731721D83B6B700D7EB04 /* PadCalendarUITests.m */,
+				AC3731741D83B6B700D7EB04 /* Info.plist */,
+			);
+			path = PadCalendarUITests;
+			sourceTree = "<group>";
+		};
+		AC3731881D83BE9200D7EB04 /* PadCalendarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AC3731891D83BF1D00D7EB04 /* PadCalendarViewController.h */,
+				AC37318A1D83BF1D00D7EB04 /* PadCalendarViewController.m */,
+			);
+			path = PadCalendarViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC3731491D83B6B700D7EB04 /* PadCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC3731771D83B6B700D7EB04 /* Build configuration list for PBXNativeTarget "PadCalendar" */;
+			buildPhases = (
+				AC3731461D83B6B700D7EB04 /* Sources */,
+				AC3731471D83B6B700D7EB04 /* Frameworks */,
+				AC3731481D83B6B700D7EB04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PadCalendar;
+			productName = PadCalendar;
+			productReference = AC37314A1D83B6B700D7EB04 /* PadCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC3731621D83B6B700D7EB04 /* PadCalendarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC37317A1D83B6B700D7EB04 /* Build configuration list for PBXNativeTarget "PadCalendarTests" */;
+			buildPhases = (
+				AC37315F1D83B6B700D7EB04 /* Sources */,
+				AC3731601D83B6B700D7EB04 /* Frameworks */,
+				AC3731611D83B6B700D7EB04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC3731651D83B6B700D7EB04 /* PBXTargetDependency */,
+			);
+			name = PadCalendarTests;
+			productName = PadCalendarTests;
+			productReference = AC3731631D83B6B700D7EB04 /* PadCalendarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AC37316D1D83B6B700D7EB04 /* PadCalendarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC37317D1D83B6B700D7EB04 /* Build configuration list for PBXNativeTarget "PadCalendarUITests" */;
+			buildPhases = (
+				AC37316A1D83B6B700D7EB04 /* Sources */,
+				AC37316B1D83B6B700D7EB04 /* Frameworks */,
+				AC37316C1D83B6B700D7EB04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC3731701D83B6B700D7EB04 /* PBXTargetDependency */,
+			);
+			name = PadCalendarUITests;
+			productName = PadCalendarUITests;
+			productReference = AC37316E1D83B6B700D7EB04 /* PadCalendarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC3731421D83B6B700D7EB04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = GeYue;
+				TargetAttributes = {
+					AC3731491D83B6B700D7EB04 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					AC3731621D83B6B700D7EB04 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = AC3731491D83B6B700D7EB04;
+					};
+					AC37316D1D83B6B700D7EB04 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = AC3731491D83B6B700D7EB04;
+					};
+				};
+			};
+			buildConfigurationList = AC3731451D83B6B700D7EB04 /* Build configuration list for PBXProject "PadCalendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC3731411D83B6B700D7EB04;
+			productRefGroup = AC37314B1D83B6B700D7EB04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC3731491D83B6B700D7EB04 /* PadCalendar */,
+				AC3731621D83B6B700D7EB04 /* PadCalendarTests */,
+				AC37316D1D83B6B700D7EB04 /* PadCalendarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC3731481D83B6B700D7EB04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC37315D1D83B6B700D7EB04 /* LaunchScreen.storyboard in Resources */,
+				AC37315A1D83B6B700D7EB04 /* Assets.xcassets in Resources */,
+				AC3731581D83B6B700D7EB04 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC3731611D83B6B700D7EB04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC37316C1D83B6B700D7EB04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC3731461D83B6B700D7EB04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC3731521D83B6B700D7EB04 /* AppDelegate.m in Sources */,
+				AC37314F1D83B6B700D7EB04 /* main.m in Sources */,
+				AC37318B1D83BF1D00D7EB04 /* PadCalendarViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC37315F1D83B6B700D7EB04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC3731681D83B6B700D7EB04 /* PadCalendarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC37316A1D83B6B700D7EB04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC3731731D83B6B700D7EB04 /* PadCalendarUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC3731651D83B6B700D7EB04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC3731491D83B6B700D7EB04 /* PadCalendar */;
+			targetProxy = AC3731641D83B6B700D7EB04 /* PBXContainerItemProxy */;
+		};
+		AC3731701D83B6B700D7EB04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC3731491D83B6B700D7EB04 /* PadCalendar */;
+			targetProxy = AC37316F1D83B6B700D7EB04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AC3731561D83B6B700D7EB04 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC3731571D83B6B700D7EB04 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AC37315B1D83B6B700D7EB04 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC37315C1D83B6B700D7EB04 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC3731751D83B6B700D7EB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AC3731761D83B6B700D7EB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC3731781D83B6B700D7EB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PadCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeYue.Developer.PadCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		AC3731791D83B6B700D7EB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PadCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeYue.Developer.PadCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		AC37317B1D83B6B700D7EB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PadCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeYue.Developer.PadCalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PadCalendar.app/PadCalendar";
+			};
+			name = Debug;
+		};
+		AC37317C1D83B6B700D7EB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PadCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeYue.Developer.PadCalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PadCalendar.app/PadCalendar";
+			};
+			name = Release;
+		};
+		AC37317E1D83B6B700D7EB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PadCalendarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeYue.Developer.PadCalendarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PadCalendar;
+			};
+			name = Debug;
+		};
+		AC37317F1D83B6B700D7EB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PadCalendarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GeYue.Developer.PadCalendarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PadCalendar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC3731451D83B6B700D7EB04 /* Build configuration list for PBXProject "PadCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC3731751D83B6B700D7EB04 /* Debug */,
+				AC3731761D83B6B700D7EB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC3731771D83B6B700D7EB04 /* Build configuration list for PBXNativeTarget "PadCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC3731781D83B6B700D7EB04 /* Debug */,
+				AC3731791D83B6B700D7EB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AC37317A1D83B6B700D7EB04 /* Build configuration list for PBXNativeTarget "PadCalendarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC37317B1D83B6B700D7EB04 /* Debug */,
+				AC37317C1D83B6B700D7EB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AC37317D1D83B6B700D7EB04 /* Build configuration list for PBXNativeTarget "PadCalendarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC37317E1D83B6B700D7EB04 /* Debug */,
+				AC37317F1D83B6B700D7EB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC3731421D83B6B700D7EB04 /* Project object */;
+}
