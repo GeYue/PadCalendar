@@ -7,8 +7,11 @@
 //
 
 #import "PadAddEventPopoverButton.h"
+#import "PadAddEventPopoverController.h"
 
 @interface PadAddEventPopoverButton ()
+
+@property (nonatomic, strong) PadAddEventPopoverController *popoverControllerAdd;
 
 @end
 
@@ -32,7 +35,9 @@
 #pragma mark - Button Action
 
 - (IBAction)buttonAction:(id)sender {
-
+    _popoverControllerAdd = [[PadAddEventPopoverController alloc] init];
+    
+    
 }
 
 @end

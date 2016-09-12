@@ -18,6 +18,7 @@
 		AC3731961D83DF1300D7EB04 /* UIColor+PadMoreColors.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3731951D83DF1300D7EB04 /* UIColor+PadMoreColors.m */; };
 		AC37319A1D83E1BD00D7EB04 /* PadRedAndWhiteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3731991D83E1BD00D7EB04 /* PadRedAndWhiteButton.m */; };
 		AC37319D1D83E58100D7EB04 /* UIImage+PadCustomMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = AC37319C1D83E58100D7EB04 /* UIImage+PadCustomMethods.m */; };
+		AC539B211D86D14B007ADE60 /* PadAddEventPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC539B201D86D14B007ADE60 /* PadAddEventPopoverController.m */; };
 		ACD41FD41D8426E70071FBDB /* PadAddEventPopoverButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD41FD31D8426E70071FBDB /* PadAddEventPopoverButton.m */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		AC3731991D83E1BD00D7EB04 /* PadRedAndWhiteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadRedAndWhiteButton.m; sourceTree = "<group>"; };
 		AC37319B1D83E58100D7EB04 /* UIImage+PadCustomMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PadCustomMethods.h"; path = "PadCategories/UIImage+PadCustomMethods.h"; sourceTree = "<group>"; };
 		AC37319C1D83E58100D7EB04 /* UIImage+PadCustomMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PadCustomMethods.m"; path = "PadCategories/UIImage+PadCustomMethods.m"; sourceTree = "<group>"; };
+		AC539B1F1D86D14B007ADE60 /* PadAddEventPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadAddEventPopoverController.h; sourceTree = "<group>"; };
+		AC539B201D86D14B007ADE60 /* PadAddEventPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadAddEventPopoverController.m; sourceTree = "<group>"; };
 		ACD41FD21D8426E70071FBDB /* PadAddEventPopoverButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadAddEventPopoverButton.h; sourceTree = "<group>"; };
 		ACD41FD31D8426E70071FBDB /* PadAddEventPopoverButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadAddEventPopoverButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +209,8 @@
 			children = (
 				ACD41FD21D8426E70071FBDB /* PadAddEventPopoverButton.h */,
 				ACD41FD31D8426E70071FBDB /* PadAddEventPopoverButton.m */,
+				AC539B1F1D86D14B007ADE60 /* PadAddEventPopoverController.h */,
+				AC539B201D86D14B007ADE60 /* PadAddEventPopoverController.m */,
 			);
 			path = PadButtonAddEventWithPopover;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				AC3731961D83DF1300D7EB04 /* UIColor+PadMoreColors.m in Sources */,
 				AC37319D1D83E58100D7EB04 /* UIImage+PadCustomMethods.m in Sources */,
 				AC37319A1D83E1BD00D7EB04 /* PadRedAndWhiteButton.m in Sources */,
+				AC539B211D86D14B007ADE60 /* PadAddEventPopoverController.m in Sources */,
 				AC3731521D83B6B700D7EB04 /* AppDelegate.m in Sources */,
 				AC37314F1D83B6B700D7EB04 /* main.m in Sources */,
 				ACD41FD41D8426E70071FBDB /* PadAddEventPopoverButton.m in Sources */,
