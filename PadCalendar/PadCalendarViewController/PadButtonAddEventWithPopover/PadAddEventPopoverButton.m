@@ -35,9 +35,18 @@
 #pragma mark - Button Action
 
 - (IBAction)buttonAction:(id)sender {
-    _popoverControllerAdd = [[PadAddEventPopoverController alloc] init];
+    _popoverControllerAdd = [[PadAddEventPopoverController alloc] initPopover];
+    self.popoverControllerAdd.modalPresentationStyle = UIModalPresentationPopover;
     
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.popoverControllerAdd animated:YES completion:nil];
     
+    UIPopoverPresentationController *popController = [self.popoverControllerAdd popoverPresentationController];
+    popController.permittedArrowDirections = UIPopoverArrowDirectionUp;
+    //popController.delegate = self;
+    
+    UIButton *button = (UIButton *)sender;
+    popController.sourceView = sender;
+    popController.sourceRect = CGRectMake(0, 0, button.frame.size.width, button.frame.size.height);
 }
 
 @end

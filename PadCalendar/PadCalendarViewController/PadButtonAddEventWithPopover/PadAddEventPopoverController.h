@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PadAddEventPopoverController : UIPopoverPresentationController
+@interface PadAddEventPopoverController : UIViewController
+
+- (id) initPopover;
 
 @end

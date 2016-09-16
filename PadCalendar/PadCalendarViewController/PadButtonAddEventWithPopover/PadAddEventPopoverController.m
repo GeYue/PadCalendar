@@ -21,13 +21,13 @@
 
 #pragma mark - Lifecycle
 
-- (void)viewDidLoad {
+- (id) initPopover {
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0., 0., 300., 700.)];
+    [self.view setBackgroundColor:[UIColor lightGrayCustom]];
+    [self.view.layer setBorderColor:[UIColor lightGrayCustom].CGColor];
+    [self.view.layer setBorderWidth:2.];
     
-    UIView *viewCustom = [[UIView alloc] initWithFrame:CGRectMake(0., 0., 300., 700.)];
-    [viewCustom setBackgroundColor:[UIColor lightGrayCustom]];
-    [viewCustom.layer setBorderColor:[UIColor lightGrayCustom].CGColor];
-    [viewCustom.layer setBorderWidth:2.];
-    
+    return self;
 }
 
 
