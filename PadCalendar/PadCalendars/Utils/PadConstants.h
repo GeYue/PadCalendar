@@ -9,5 +9,6 @@
 #ifndef PadConstants_h
 #define PadConstants_h
 
+#define BUTTON_HEIGHT 44.
 
 #endif /* PadConstants_h */

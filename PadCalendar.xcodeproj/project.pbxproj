@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC0CF9401D8C2DF000328B31 /* PadConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadConstants.h; sourceTree = "<group>"; };
 		AC37314A1D83B6B700D7EB04 /* PadCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PadCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC37314E1D83B6B700D7EB04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC3731501D83B6B700D7EB04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 			children = (
 				AC3731971D83E12700D7EB04 /* PadColorButtons */,
 				AC37318F1D83DC1800D7EB04 /* PadCategories */,
+				AC0CF9401D8C2DF000328B31 /* PadConstants.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";

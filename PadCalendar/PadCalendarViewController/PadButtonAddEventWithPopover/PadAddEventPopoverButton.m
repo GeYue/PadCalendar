@@ -38,7 +38,8 @@
     _popoverControllerAdd = [[PadAddEventPopoverController alloc] initPopover];
     self.popoverControllerAdd.modalPresentationStyle = UIModalPresentationPopover;
     
-    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.popoverControllerAdd animated:YES completion:nil];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.popoverControllerAdd
+                                                                                 animated:YES completion:nil];
     
     UIPopoverPresentationController *popController = [self.popoverControllerAdd popoverPresentationController];
     popController.permittedArrowDirections = UIPopoverArrowDirectionUp;
