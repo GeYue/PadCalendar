@@ -10,11 +10,16 @@
 #import "UIColor+PadMoreColors.h"
 #import "PadConstants.h"
 
+#import "PadSearchBarWithAutoComplete.h"
+
+
 @interface PadAddEventPopoverController ()
 
 @property (nonatomic, strong) UIButton *buttonCancel;
 @property (nonatomic, strong) UIButton *buttonDone;
 @property (nonatomic, strong) UILabel *labelEventName;
+
+@property (nonatomic, strong) PadSearchBarWithAutoComplete *searchBarCustom;
 
 @end
 
@@ -30,6 +35,7 @@
     
     [self addButtonCancelWithCustomView:self.view];
     [self addButtonDoneWithCustomView:self.view];
+    [self addSearchBarWithCustomView:self.view];
     
     return self;
 }

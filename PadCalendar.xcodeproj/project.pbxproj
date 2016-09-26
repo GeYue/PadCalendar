@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC2467A01D99635300881916 /* PadSearchBarWithAutoComplete.m in Sources */ = {isa = PBXBuildFile; fileRef = AC24679F1D99635300881916 /* PadSearchBarWithAutoComplete.m */; };
 		AC37314F1D83B6B700D7EB04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC37314E1D83B6B700D7EB04 /* main.m */; };
 		AC3731521D83B6B700D7EB04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3731511D83B6B700D7EB04 /* AppDelegate.m */; };
 		AC3731581D83B6B700D7EB04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC3731561D83B6B700D7EB04 /* Main.storyboard */; };
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		AC0CF9401D8C2DF000328B31 /* PadConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadConstants.h; sourceTree = "<group>"; };
+		AC24679E1D99635300881916 /* PadSearchBarWithAutoComplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadSearchBarWithAutoComplete.h; sourceTree = "<group>"; };
+		AC24679F1D99635300881916 /* PadSearchBarWithAutoComplete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadSearchBarWithAutoComplete.m; sourceTree = "<group>"; };
 		AC37314A1D83B6B700D7EB04 /* PadCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PadCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC37314E1D83B6B700D7EB04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC3731501D83B6B700D7EB04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC24679A1D99625B00881916 /* PadEvent+Popover */ = {
+			isa = PBXGroup;
+			children = (
+				AC24679E1D99635300881916 /* PadSearchBarWithAutoComplete.h */,
+				AC24679F1D99635300881916 /* PadSearchBarWithAutoComplete.m */,
+			);
+			path = "PadEvent+Popover";
+			sourceTree = "<group>";
+		};
 		AC3731411D83B6B700D7EB04 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +191,7 @@
 		AC37318E1D83DBD900D7EB04 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AC24679A1D99625B00881916 /* PadEvent+Popover */,
 				AC3731971D83E12700D7EB04 /* PadColorButtons */,
 				AC37318F1D83DC1800D7EB04 /* PadCategories */,
 				AC0CF9401D8C2DF000328B31 /* PadConstants.h */,
@@ -347,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC2467A01D99635300881916 /* PadSearchBarWithAutoComplete.m in Sources */,
 				AC3731961D83DF1300D7EB04 /* UIColor+PadMoreColors.m in Sources */,
 				AC37319D1D83E58100D7EB04 /* UIImage+PadCustomMethods.m in Sources */,
 				AC37319A1D83E1BD00D7EB04 /* PadRedAndWhiteButton.m in Sources */,

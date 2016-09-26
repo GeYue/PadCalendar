@@ -1,5 +1,5 @@
 //
-//  PadSearchBarWithComplete.h
+//  PadSearchBarWithAutoComplete.h
 //  PadCalendar
 //
 //  Created by 葛岳 on 2016/9/26.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PadSearchBarWithComplete : UISearchBar
+@interface PadSearchBarWithAutoComplete : UISearchBar
 
 @property (nonatomic, strong) UITableView *tableViewCustom;
 
