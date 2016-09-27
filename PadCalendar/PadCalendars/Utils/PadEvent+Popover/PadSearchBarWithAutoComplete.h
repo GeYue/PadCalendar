@@ -10,6 +10,8 @@
 
 @interface PadSearchBarWithAutoComplete : UISearchBar
 
+@property (nonatomic, strong) NSMutableArray *arrayOfTableView;
+
 @property (nonatomic, strong) UITableView *tableViewCustom;
 
 @end

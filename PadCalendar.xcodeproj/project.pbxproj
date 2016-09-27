@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC057DCE1D9AC10E005C85AC /* PadEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = AC057DCD1D9AC10E005C85AC /* PadEvent.m */; };
 		AC2467A01D99635300881916 /* PadSearchBarWithAutoComplete.m in Sources */ = {isa = PBXBuildFile; fileRef = AC24679F1D99635300881916 /* PadSearchBarWithAutoComplete.m */; };
 		AC37314F1D83B6B700D7EB04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC37314E1D83B6B700D7EB04 /* main.m */; };
 		AC3731521D83B6B700D7EB04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3731511D83B6B700D7EB04 /* AppDelegate.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AC057DCC1D9AC10E005C85AC /* PadEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadEvent.h; sourceTree = "<group>"; };
+		AC057DCD1D9AC10E005C85AC /* PadEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadEvent.m; sourceTree = "<group>"; };
 		AC0CF9401D8C2DF000328B31 /* PadConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadConstants.h; sourceTree = "<group>"; };
 		AC24679E1D99635300881916 /* PadSearchBarWithAutoComplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadSearchBarWithAutoComplete.h; sourceTree = "<group>"; };
 		AC24679F1D99635300881916 /* PadSearchBarWithAutoComplete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadSearchBarWithAutoComplete.m; sourceTree = "<group>"; };
@@ -98,6 +101,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC057DCB1D9AC0C2005C85AC /* PadEvent */ = {
+			isa = PBXGroup;
+			children = (
+				AC057DCC1D9AC10E005C85AC /* PadEvent.h */,
+				AC057DCD1D9AC10E005C85AC /* PadEvent.m */,
+			);
+			path = PadEvent;
+			sourceTree = "<group>";
+		};
 		AC24679A1D99625B00881916 /* PadEvent+Popover */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +203,7 @@
 		AC37318E1D83DBD900D7EB04 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AC057DCB1D9AC0C2005C85AC /* PadEvent */,
 				AC24679A1D99625B00881916 /* PadEvent+Popover */,
 				AC3731971D83E12700D7EB04 /* PadColorButtons */,
 				AC37318F1D83DC1800D7EB04 /* PadCategories */,
@@ -364,6 +377,7 @@
 				AC3731961D83DF1300D7EB04 /* UIColor+PadMoreColors.m in Sources */,
 				AC37319D1D83E58100D7EB04 /* UIImage+PadCustomMethods.m in Sources */,
 				AC37319A1D83E1BD00D7EB04 /* PadRedAndWhiteButton.m in Sources */,
+				AC057DCE1D9AC10E005C85AC /* PadEvent.m in Sources */,
 				AC539B211D86D14B007ADE60 /* PadAddEventPopoverController.m in Sources */,
 				AC3731521D83B6B700D7EB04 /* AppDelegate.m in Sources */,
 				AC37314F1D83B6B700D7EB04 /* main.m in Sources */,

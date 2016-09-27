@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSArray *arrayButtons;
 @property (nonatomic, strong) NSArray *arrayCalendars;
 
+@property (nonatomic, strong) NSMutableDictionary *dictEvents;
+
 @end
 
 #define DATEMANAGER_DATE_CHANGED    @"com.GeYue.Developer.Padcalendar.DataeManager.DateChanged"
