@@ -11,6 +11,9 @@
 #import "PadConstants.h"
 
 #import "PadSearchBarWithAutoComplete.h"
+#import "PadEvent.h"
+#import "PadButtonWithDatePopover.h"
+#import "PadButtonWithTimePopover.h"
 
 
 @interface PadAddEventPopoverController ()
@@ -18,6 +21,12 @@
 @property (nonatomic, strong) UIButton *buttonCancel;
 @property (nonatomic, strong) UIButton *buttonDone;
 @property (nonatomic, strong) UILabel *labelEventName;
+
+@property (nonatomic, strong) PadButtonWithDatePopover *dateOfButton;
+@property (nonatomic, strong) PadButtonWithTimePopover *buttonTimeBegin;
+@property (nonatomic, strong) PadButtonWithTimePopover *buttonTimeEnd;
+
+@property (nonatomic, strong) UITextField *textFieldEvent;
 
 @property (nonatomic, strong) PadSearchBarWithAutoComplete *searchBarCustom;
 
@@ -48,7 +57,13 @@
 }
 
 - (IBAction)buttonDoneAction:(id)sender {
-    
+    PadEvent *newEvent = [[PadEvent alloc] init];
+    newEvent.stringEventName = self.searchBarCustom.stringEventName;
+    newEvent.numEventID = self.searchBarCustom.numEventID;
+    newEvent.dateDay = self.dateOfButton.dateOfButton;
+    newEvent.dateTimeBegin = self.buttonTimeBegin.dateOfButton;
+    newEvent.dateTimeEnd = self.buttonTimeEnd.dateOfButton;
+    newEvent.stringEventContent = self.textFieldEvent.text;
 }
 
 #pragma mark - Add Subviews
