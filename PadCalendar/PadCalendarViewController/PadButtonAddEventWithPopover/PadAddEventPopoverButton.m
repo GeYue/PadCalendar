@@ -9,7 +9,7 @@
 #import "PadAddEventPopoverButton.h"
 #import "PadAddEventPopoverController.h"
 
-@interface PadAddEventPopoverButton ()
+@interface PadAddEventPopoverButton () <PadAddEventPopoverControllerProtocol>
 
 @property (nonatomic, strong) PadAddEventPopoverController *popoverControllerAdd;
 
@@ -37,6 +37,7 @@
 - (IBAction)buttonAction:(id)sender {
     _popoverControllerAdd = [[PadAddEventPopoverController alloc] initPopover];
     self.popoverControllerAdd.modalPresentationStyle = UIModalPresentationPopover;
+    [self.popoverControllerAdd setProtocol:self];
     
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self.popoverControllerAdd
                                                                                  animated:YES completion:nil];
@@ -48,6 +49,14 @@
     UIButton *button = (UIButton *)sender;
     popController.sourceView = sender;
     popController.sourceRect = CGRectMake(0, 0, button.frame.size.width, button.frame.size.height);
+}
+
+#pragma mark - PadAddEventPopoverController Protocol
+
+- (void) addNewEvent:(PadEvent *)eventNew {
+    if (_protocol && [_protocol respondsToSelector:@selector(addNewEvent:)]) {
+        [_protocol addNewEvent:eventNew];
+    }
 }
 
 @end

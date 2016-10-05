@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PadEvent.h"
+
+@protocol PadAddEventPopoverControllerProtocol <NSObject>
+
+@required
+- (void) addNewEvent:(PadEvent *)eventNew;
+
+@end
 
 @interface PadAddEventPopoverController : UIViewController
 
 - (id) initPopover;
+
+@property (nonatomic, strong) id<PadAddEventPopoverControllerProtocol> protocol;
 
 @end

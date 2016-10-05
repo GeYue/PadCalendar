@@ -8,10 +8,10 @@
 
 #import "PadAddEventPopoverController.h"
 #import "UIColor+PadMoreColors.h"
+#import "NSDate+PadDayCount.h"
 #import "PadConstants.h"
 
 #import "PadSearchBarWithAutoComplete.h"
-#import "PadEvent.h"
 #import "PadButtonWithDatePopover.h"
 #import "PadButtonWithTimePopover.h"
 
@@ -32,7 +32,7 @@
 
 @end
 
-@implementation PadAddEventPopoverController
+@implementation PadAddEventPopoverController 
 
 #pragma mark - Lifecycle
 
@@ -64,6 +64,36 @@
     newEvent.dateTimeBegin = self.buttonTimeBegin.dateOfButton;
     newEvent.dateTimeEnd = self.buttonTimeEnd.dateOfButton;
     newEvent.stringEventContent = self.textFieldEvent.text;
+    
+    NSString *stringError = nil;
+    if (![self isTimeBeginEarlier:newEvent.dateTimeBegin timeEnd:newEvent.dateTimeEnd]) {
+        stringError = @"Start time must occur earlier than end time.";
+    } else if (0 == newEvent.stringEventContent.length) {
+        stringError = @"Please input the event content.";
+    }
+    
+    if (stringError) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:stringError
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else if (_protocol && [_protocol respondsToSelector:@selector(addNewEvent:)]) {
+        [_protocol addNewEvent:newEvent];
+        [self buttonCalcelAction:nil];
+    }
+}
+
+- (BOOL) isTimeBeginEarlier:(NSDate *)dateBegin timeEnd:(NSDate *)dateEnd {
+    BOOL boolRet = YES;
+    
+    NSDateComponents *compDateBegin = [NSDate componentsOfDate:dateBegin];
+    NSDateComponents *compDateEnd = [NSDate componentsOfDate:dateEnd];
+    
+    if ((compDateBegin.hour > compDateEnd.hour) || (compDateBegin.hour == compDateEnd.hour &&compDateBegin.minute >= compDateEnd.minute)) {
+        boolRet = NO;
+    }
+    return boolRet;
 }
 
 #pragma mark - Add Subviews

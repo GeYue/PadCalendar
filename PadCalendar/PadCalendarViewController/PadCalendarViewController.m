@@ -9,7 +9,7 @@
 #import "PadCalendarViewController.h"
 #import "PadCalendars.h"
 
-@interface PadCalendarViewController ()
+@interface PadCalendarViewController () <PadButtonAddEventWithPopoverProtocol>
 
 @property (nonatomic, strong) UILabel *labelWithMonthAndYear;
 @property (nonatomic, strong) NSArray *arrayButtons;
@@ -121,4 +121,28 @@
     
 }
 
+#pragma mark - PadButtonAddEventWithPopoverProtocol Protocol
+
+- (void) addNewEvent:(PadEvent *)eventNew {
+    NSMutableArray *arrayNew = [_dictEvents objectForKey:eventNew.dateDay];
+    if (!arrayNew) {
+        arrayNew = [[NSMutableArray alloc] init];
+        [_dictEvents setObject:arrayNew forKey:eventNew.dateDay];
+    }
+    [arrayNew addObject:eventNew];
+    
+    [self setNewDictionary:_dictEvents];
+}
+
+#pragma mark - PadmonthCalendarView, PadWeekCalendarView, PadDayCalendarView Protocal
+
+- (void) setNewDictionary:(NSDictionary *)dict {
+    _dictEvents = (NSMutableArray *)dict;
+    
+    //[self.viewCalendarMonth setNewDictEvents:_dictEvents];
+    //[self.viewCalendarWeek setNewDictEvents:_dictEvents];
+    //[self.viewCalendarDay setNewDictEvents:_dictEvents];
+    
+    
+}
 @end

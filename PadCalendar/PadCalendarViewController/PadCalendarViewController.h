@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PadCalendarViewControllerProtocol <NSObject>
+
+@required
+- (void) arrayUpdatedWithAllEvents:(NSMutableArray *)arrayUpdated;
+
+@end
+
 @interface PadCalendarViewController : UIViewController
 
+@property (nonatomic, strong) id<PadCalendarViewControllerProtocol> protocol;
 @property (nonatomic, strong) NSMutableArray *arrayWithEvents;
 
 @end
