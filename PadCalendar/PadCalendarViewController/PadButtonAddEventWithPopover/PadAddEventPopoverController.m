@@ -46,6 +46,7 @@
     [self addButtonDoneWithCustomView:self.view];
     [self addSearchBarWithCustomView:self.view];
     
+    [self addSearchBarWithCustomView:self.view];
     return self;
 }
 
@@ -118,7 +119,8 @@
 }
 
 - (void) addSearchBarWithCustomView:(UIView *)customView {
-    
+    _searchBarCustom = [[PadSearchBarWithAutoComplete alloc] initWithDateAndFrame:self.dateOfButton.dateOfButton Frame:CGRectMake(0, _buttonCancel.superview.frame.origin.y+_buttonCancel.superview.frame.size.height+BUTTON_HEIGHT, customView.frame.size.width, BUTTON_HEIGHT)];
+    [customView addSubview:_searchBarCustom];
 }
 
 - (void) addButtonDateWithCustomView:(UIView *)customView {

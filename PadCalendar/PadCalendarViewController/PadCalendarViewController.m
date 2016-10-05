@@ -143,6 +143,18 @@
     //[self.viewCalendarWeek setNewDictEvents:_dictEvents];
     //[self.viewCalendarDay setNewDictEvents:_dictEvents];
     
+    [self arrayUpdatedWithEvents];
+}
+
+- (void) arrayUpdatedWithEvents {
+    NSMutableArray *arrayNew = [NSMutableArray new];
     
+    NSArray *arrayKeys = self.dictEvents.allKeys;
+    for (NSDate *date in arrayKeys) {
+        NSArray *arrayOfDate = [self.dictEvents objectForKey:date];
+        for (PadEvent *event in arrayOfDate) {
+            [arrayNew addObject:event];
+        }
+    }
 }
 @end

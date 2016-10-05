@@ -15,4 +15,6 @@
 @property (nonatomic, strong) NSString *stringEventName;
 @property (nonatomic, strong) NSNumber *numEventID;
 
+- (id) initWithDateAndFrame:(NSDate*)date Frame:(CGRect)frame;
+
 @end
