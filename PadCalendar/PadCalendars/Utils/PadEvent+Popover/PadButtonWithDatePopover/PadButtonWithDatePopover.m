@@ -38,6 +38,9 @@
 
 - (IBAction)buttonAction:(id)sender {
     self.popoverDateController = [[PadDatePopoverController alloc] initWithDate:self.dateOfButton];
+    UIDatePicker *datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 300, 200)];
+
+    self.popoverDateController.preferredContentSize = datePickerView.frame.size;
     self.popoverDateController.modalPresentationStyle = UIModalPresentationPopover;
     //[self.popoverDateController setProtocol:self];
     

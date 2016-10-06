@@ -21,12 +21,7 @@
     [self.datePickerView setDate:date];
     [self.datePickerView addTarget:self action:@selector(valueOfPickerChanged:) forControlEvents:UIControlEventValueChanged];
     
-    self.popContent = [[UIViewController alloc] init];
-    self.popContent.view = self.datePickerView;
-    self.popContent.preferredContentSize = self.datePickerView.frame.size;
-    
     [self.view addSubview:self.datePickerView];
-    
     return self;
 }
 
