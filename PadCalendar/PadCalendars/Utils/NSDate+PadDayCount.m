@@ -7,11 +7,61 @@
 //
 
 #import "NSDate+PadDayCount.h"
+#import "PadConstants.h"
 
 @implementation NSDate (PadDayCount)
 
+#pragma mark - Class Methods
+
 + (NSDateComponents *) componentsOfDate:(NSDate *)date {
     return [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitWeekday | NSCalendarUnitWeekOfMonth | NSCalendarUnitHour  | NSCalendarUnitMinute fromDate:date];
+}
+
++ (NSDateComponents *) compoentsOfCurrentDate {
+    return [NSDate componentsOfDate:[NSDate date]];
+}
+
++ (NSDateComponents *) componentsWithHour:(NSInteger)hour min:(NSInteger)min {
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setHour:hour];
+    [components setMinute:min];
+    
+    return components;
+}
+
++ (NSDate *) dateWithHour:(NSInteger)hour min:(NSInteger)min {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [NSDate componentsWithHour:hour min:min];
+    
+    return [calendar dateFromComponents:components];
+}
+
++ (NSDate *) dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents *components = [NSDate componentsWithYear:year month:month day:day];
+    
+    return [calendar dateFromComponents:components];
+}
+
++ (NSDateComponents *) componentsWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setYear:year];
+    [components setMonth:month];
+    [components setDay:day];
+    
+    return components;
+}
+
++ (NSString *) stringDayOfDate:(NSDate *)date {
+    NSDateComponents *comp = [NSDate componentsOfDate:date];
+    
+    return [NSString stringWithFormat:@"%@, %@ %li, %li", [dictWeekNumberName objectForKey:[NSNumber numberWithLong:comp.weekday]], [arrayMonthNameAbrev objectAtIndex:comp.month-1], (long)comp.day, (long)comp.year];
+}
+
+#pragma mark - Object Methods
+
+- (NSDateComponents *) componentsOfDate {
+    return [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute fromDate:self];
 }
 
 @end

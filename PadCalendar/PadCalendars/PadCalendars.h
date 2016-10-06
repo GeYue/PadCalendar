@@ -11,7 +11,10 @@
 
 #import "PadAddEventPopoverButton.h"
 
+#import "PadConstants.h"
+
 #import "UIColor+PadMoreColors.h"
 #import "PadRedAndWhiteButton.h"
 #import "UIImage+PadCustomMethods.h"
+#import "NSDate+PadDayCount.h"
 #endif /* PadCalendars_h */

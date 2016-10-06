@@ -22,13 +22,15 @@
 @property (nonatomic, strong) UIButton *buttonDone;
 @property (nonatomic, strong) UILabel *labelEventName;
 
-@property (nonatomic, strong) PadButtonWithDatePopover *dateOfButton;
+@property (nonatomic, strong) PadButtonWithDatePopover *buttonDate;
 @property (nonatomic, strong) PadButtonWithTimePopover *buttonTimeBegin;
 @property (nonatomic, strong) PadButtonWithTimePopover *buttonTimeEnd;
 
 @property (nonatomic, strong) UITextField *textFieldEvent;
 
 @property (nonatomic, strong) PadSearchBarWithAutoComplete *searchBarCustom;
+
+@property (nonatomic, strong) PadEvent *currentDayEvent;
 
 @end
 
@@ -37,6 +39,16 @@
 #pragma mark - Lifecycle
 
 - (id) initPopover {
+    
+    NSDateComponents *component = [NSDate compoentsOfCurrentDate];
+    self.currentDayEvent = [[PadEvent alloc] init];
+    self.currentDayEvent.stringEventName = @"";
+    self.currentDayEvent.dateDay = [NSDate date];
+    self.currentDayEvent.dateTimeBegin = [NSDate dateWithHour:component.hour min:component.minute];
+    self.currentDayEvent.dateTimeEnd = [NSDate dateWithHour:component.hour min:component.minute+15];
+    self.currentDayEvent.stringEventContent = @"";
+
+    
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0., 0., 300., 700.)];
     [self.view setBackgroundColor:[UIColor lightGrayCustom]];
     [self.view.layer setBorderColor:[UIColor lightGrayCustom].CGColor];
@@ -47,6 +59,7 @@
     [self addSearchBarWithCustomView:self.view];
     
     [self addSearchBarWithCustomView:self.view];
+    [self addButtonDateWithCustomView:self.view];
     return self;
 }
 
@@ -61,7 +74,7 @@
     PadEvent *newEvent = [[PadEvent alloc] init];
     newEvent.stringEventName = self.searchBarCustom.stringEventName;
     newEvent.numEventID = self.searchBarCustom.numEventID;
-    newEvent.dateDay = self.dateOfButton.dateOfButton;
+    newEvent.dateDay = self.buttonDate.dateOfButton;
     newEvent.dateTimeBegin = self.buttonTimeBegin.dateOfButton;
     newEvent.dateTimeEnd = self.buttonTimeEnd.dateOfButton;
     newEvent.stringEventContent = self.textFieldEvent.text;
@@ -101,7 +114,7 @@
 
 - (void) addButtonCancelWithCustomView:(UIView *)customView {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, customView.frame.size.width, BUTTON_HEIGHT+30)];
-    [view setBackgroundColor:[UIColor lightGrayCustom]];
+    [view setBackgroundColor:[UIColor lighterGrayCustom]];
     [customView addSubview:view];
     
     _buttonCancel = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -119,12 +132,13 @@
 }
 
 - (void) addSearchBarWithCustomView:(UIView *)customView {
-    _searchBarCustom = [[PadSearchBarWithAutoComplete alloc] initWithDateAndFrame:self.dateOfButton.dateOfButton Frame:CGRectMake(0, _buttonCancel.superview.frame.origin.y+_buttonCancel.superview.frame.size.height+BUTTON_HEIGHT, customView.frame.size.width, BUTTON_HEIGHT)];
+    _searchBarCustom = [[PadSearchBarWithAutoComplete alloc] initWithDateAndFrame:self.currentDayEvent.dateDay Frame:CGRectMake(0, _buttonCancel.superview.frame.origin.y+_buttonCancel.superview.frame.size.height+BUTTON_HEIGHT, customView.frame.size.width, BUTTON_HEIGHT)];
     [customView addSubview:_searchBarCustom];
 }
 
 - (void) addButtonDateWithCustomView:(UIView *)customView {
-    
+    _buttonDate = [[PadButtonWithDatePopover alloc] initWithFrame:CGRectMake(0, _searchBarCustom.frame.origin.y+_searchBarCustom.frame.size.height+2, customView.frame.size.width, BUTTON_HEIGHT) date:_currentDayEvent.dateDay];
+    [customView addSubview:_buttonDate];
 }
 
 - (void) addButtonTimeBeginWithCustomView:(UIView *)customView {

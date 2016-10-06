@@ -32,16 +32,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PadCalendar/PadCalendars/Utils/PadEvent+Popover/PadSearchBarWithComplete/PadSearchBarWithAutoComplete.m"
-            timestampString = "497359636.025509"
+            filePath = "PadCalendar/PadCalendars/Utils/PadEvent+Popover/PadButtonWithDatePopover/PadButtonWithDatePopover.m"
+            timestampString = "497441173.883854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "-initWithDateAndFrame:Frame:"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-buttonAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PadCalendar/PadCalendars/Utils/PadEvent+Popover/PadButtonWithDatePopover/PadButtonWithDatePopover.m"
+            timestampString = "497441762.670106"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-buttonAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PadCalendar/PadCalendars/Utils/PadEvent+Popover/PadButtonWithDatePopover/PadButtonWithDatePopover.m"
+            timestampString = "497442171.241773"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-buttonAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

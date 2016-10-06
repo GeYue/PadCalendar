@@ -22,6 +22,7 @@
 		AC4DE6D41D9D5F5800F8D67B /* PadSearchBarWithAutoComplete.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4DE6D31D9D5F5800F8D67B /* PadSearchBarWithAutoComplete.m */; };
 		AC539B211D86D14B007ADE60 /* PadAddEventPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC539B201D86D14B007ADE60 /* PadAddEventPopoverController.m */; };
 		AC5578F61DA489D100C224D6 /* NSDate+PadDayCount.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5578F51DA489D100C224D6 /* NSDate+PadDayCount.m */; };
+		ACA082BC1DA6493C0042C3C4 /* PadDatePopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA082BB1DA6493C0042C3C4 /* PadDatePopoverController.m */; };
 		ACCD80481D9D609B00E61668 /* PadButtonWithDatePopover.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCD80471D9D609B00E61668 /* PadButtonWithDatePopover.m */; };
 		ACCD804B1D9D60B100E61668 /* PadButtonWithTimePopover.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCD804A1D9D60B100E61668 /* PadButtonWithTimePopover.m */; };
 		ACD41FD41D8426E70071FBDB /* PadAddEventPopoverButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD41FD31D8426E70071FBDB /* PadAddEventPopoverButton.m */; };
@@ -67,7 +68,7 @@
 		AC37318D1D83DA8C00D7EB04 /* PadCalendars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PadCalendars.h; sourceTree = "<group>"; };
 		AC3731941D83DF1300D7EB04 /* UIColor+PadMoreColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PadMoreColors.h"; path = "PadCategories/UIColor+PadMoreColors.h"; sourceTree = "<group>"; };
 		AC3731951D83DF1300D7EB04 /* UIColor+PadMoreColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PadMoreColors.m"; path = "PadCategories/UIColor+PadMoreColors.m"; sourceTree = "<group>"; };
-		AC3731981D83E1BD00D7EB04 /* PadRedAndWhiteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PadRedAndWhiteButton.h; path = PadColorButtons/PadRedAndWhiteButton.h; sourceTree = "<group>"; };
+		AC3731981D83E1BD00D7EB04 /* PadRedAndWhiteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadRedAndWhiteButton.h; sourceTree = "<group>"; };
 		AC3731991D83E1BD00D7EB04 /* PadRedAndWhiteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadRedAndWhiteButton.m; sourceTree = "<group>"; };
 		AC37319B1D83E58100D7EB04 /* UIImage+PadCustomMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PadCustomMethods.h"; path = "PadCategories/UIImage+PadCustomMethods.h"; sourceTree = "<group>"; };
 		AC37319C1D83E58100D7EB04 /* UIImage+PadCustomMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PadCustomMethods.m"; path = "PadCategories/UIImage+PadCustomMethods.m"; sourceTree = "<group>"; };
@@ -77,6 +78,8 @@
 		AC539B201D86D14B007ADE60 /* PadAddEventPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadAddEventPopoverController.m; sourceTree = "<group>"; };
 		AC5578F41DA489D100C224D6 /* NSDate+PadDayCount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+PadDayCount.h"; sourceTree = "<group>"; };
 		AC5578F51DA489D100C224D6 /* NSDate+PadDayCount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+PadDayCount.m"; sourceTree = "<group>"; };
+		ACA082BA1DA6493C0042C3C4 /* PadDatePopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadDatePopoverController.h; sourceTree = "<group>"; };
+		ACA082BB1DA6493C0042C3C4 /* PadDatePopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadDatePopoverController.m; sourceTree = "<group>"; };
 		ACCD80461D9D609B00E61668 /* PadButtonWithDatePopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadButtonWithDatePopover.h; sourceTree = "<group>"; };
 		ACCD80471D9D609B00E61668 /* PadButtonWithDatePopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadButtonWithDatePopover.m; sourceTree = "<group>"; };
 		ACCD80491D9D60B100E61668 /* PadButtonWithTimePopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadButtonWithTimePopover.h; sourceTree = "<group>"; };
@@ -225,7 +228,6 @@
 		AC37318F1D83DC1800D7EB04 /* PadCategories */ = {
 			isa = PBXGroup;
 			children = (
-				AC3731981D83E1BD00D7EB04 /* PadRedAndWhiteButton.h */,
 				AC3731941D83DF1300D7EB04 /* UIColor+PadMoreColors.h */,
 				AC3731951D83DF1300D7EB04 /* UIColor+PadMoreColors.m */,
 				AC37319B1D83E58100D7EB04 /* UIImage+PadCustomMethods.h */,
@@ -239,6 +241,7 @@
 		AC3731971D83E12700D7EB04 /* PadColorButtons */ = {
 			isa = PBXGroup;
 			children = (
+				AC3731981D83E1BD00D7EB04 /* PadRedAndWhiteButton.h */,
 				AC3731991D83E1BD00D7EB04 /* PadRedAndWhiteButton.m */,
 			);
 			path = PadColorButtons;
@@ -258,6 +261,8 @@
 			children = (
 				ACCD80461D9D609B00E61668 /* PadButtonWithDatePopover.h */,
 				ACCD80471D9D609B00E61668 /* PadButtonWithDatePopover.m */,
+				ACA082BA1DA6493C0042C3C4 /* PadDatePopoverController.h */,
+				ACA082BB1DA6493C0042C3C4 /* PadDatePopoverController.m */,
 			);
 			path = PadButtonWithDatePopover;
 			sourceTree = "<group>";
@@ -425,6 +430,7 @@
 				AC37314F1D83B6B700D7EB04 /* main.m in Sources */,
 				ACD41FD41D8426E70071FBDB /* PadAddEventPopoverButton.m in Sources */,
 				AC37318B1D83BF1D00D7EB04 /* PadCalendarViewController.m in Sources */,
+				ACA082BC1DA6493C0042C3C4 /* PadDatePopoverController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
