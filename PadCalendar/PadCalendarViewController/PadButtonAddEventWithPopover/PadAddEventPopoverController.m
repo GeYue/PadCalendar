@@ -60,6 +60,9 @@
     
     [self addSearchBarWithCustomView:self.view];
     [self addButtonDateWithCustomView:self.view];
+    [self addButtonTimeBeginWithCustomView:self.view];
+    [self addButtonTimeEndWithCustomView:self.view];
+    
     return self;
 }
 
@@ -142,11 +145,13 @@
 }
 
 - (void) addButtonTimeBeginWithCustomView:(UIView *)customView {
-    
+    _buttonTimeBegin = [[PadButtonWithTimePopover alloc] initWithFrame:CGRectMake(0, _buttonDate.frame.origin.y+_buttonDate.frame.size.height+BUTTON_HEIGHT, customView.frame.size.width, BUTTON_HEIGHT) date:_currentDayEvent.dateTimeBegin];
+    [customView addSubview:_buttonTimeBegin];
 }
 
 - (void) addButtonTimeEndWithCustomView:(UIView *)customView {
-    
+    _buttonTimeEnd = [[PadButtonWithTimePopover alloc] initWithFrame:CGRectMake(0, _buttonTimeBegin.frame.origin.y+_buttonTimeBegin.frame.size.height+2, customView.frame.size.width, BUTTON_HEIGHT) date:_currentDayEvent.dateTimeEnd];
+    [customView addSubview:_buttonTimeEnd];
 }
 
 - (void) addTableViewGuestsWithCustomView:(UIView *)customView {

@@ -22,6 +22,8 @@
 
 + (NSString *) stringDayOfDate:(NSDate *)date;
 
++ (NSString *) stringTimeOfDate:(NSDate *)date;
+
 - (NSDateComponents *) componentsOfDate;
 
 @end

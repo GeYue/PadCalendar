@@ -58,6 +58,13 @@
     return [NSString stringWithFormat:@"%@, %@ %li, %li", [dictWeekNumberName objectForKey:[NSNumber numberWithLong:comp.weekday]], [arrayMonthNameAbrev objectAtIndex:comp.month-1], (long)comp.day, (long)comp.year];
 }
 
++ (NSString *) stringTimeOfDate:(NSDate *)date {
+    NSDateFormatter *dateFormater = [NSDateFormatter new];
+    [dateFormater setDateFormat:@"HH:mm"];
+    
+    return [dateFormater stringFromDate:date];
+}
+
 #pragma mark - Object Methods
 
 - (NSDateComponents *) componentsOfDate {

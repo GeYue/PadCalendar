@@ -9,7 +9,6 @@
 #import "PadDatePopoverController.h"
 
 @interface PadDatePopoverController () <UIPickerViewDelegate>
-@property (nonatomic, strong) UIViewController *popContent;
 @property (nonatomic, strong) UIDatePicker *datePickerView;
 @end
 
@@ -26,7 +25,9 @@
 }
 
 - (IBAction)valueOfPickerChanged:(id)sender {
-    
+    if (self.protocol && [self.protocol respondsToSelector:@selector(valueChanged:)]) {
+        [self.protocol valueChanged:self.datePickerView.date];
+    }
 }
 
 @end

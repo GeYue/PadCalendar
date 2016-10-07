@@ -11,7 +11,7 @@
 
 #import "PadCalendars.h"
 
-@interface PadButtonWithDatePopover ()
+@interface PadButtonWithDatePopover () <PadDatePopoverControllerProtocol>
 @property (nonatomic, strong) PadDatePopoverController *popoverDateController;
 @end
 
@@ -38,11 +38,12 @@
 
 - (IBAction)buttonAction:(id)sender {
     self.popoverDateController = [[PadDatePopoverController alloc] initWithDate:self.dateOfButton];
+    
     UIDatePicker *datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 300, 200)];
-
     self.popoverDateController.preferredContentSize = datePickerView.frame.size;
+    
     self.popoverDateController.modalPresentationStyle = UIModalPresentationPopover;
-    //[self.popoverDateController setProtocol:self];
+    [self.popoverDateController setProtocol:self];
     
     UIResponder *responder = self;
     while ((responder = [responder nextResponder]))
@@ -57,6 +58,14 @@
     UIButton *button = (UIButton *)sender;
     presentController.sourceView = sender;
     presentController.sourceRect = CGRectMake(0, 0, button.frame.size.width, button.frame.size.height);
+}
+
+#pragma mark - PadDatePopoverController Protocol
+
+- (void) valueChanged:(NSDate *)newDate {
+    NSDateComponents *components = newDate.componentsOfDate;
+    self.dateOfButton = [NSDate dateWithYear:components.year month:components.month day:components.day];
+    [self setTitle:[NSDate stringDayOfDate:self.dateOfButton] forState:UIControlStateNormal];
 }
 
 @end
