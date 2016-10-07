@@ -18,7 +18,7 @@
     _timePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, _timePickerView.frame.size.width, _timePickerView.frame.size.height)];
     [_timePickerView setDatePickerMode:UIDatePickerModeTime];
     
-    [_timePickerView setDate:date];
+    [_timePickerView setDate:date animated:YES];
     [_timePickerView addTarget:self action:@selector(valuePickerChanged:) forControlEvents:UIControlEventValueChanged];
     
     [self.view addSubview:_timePickerView];

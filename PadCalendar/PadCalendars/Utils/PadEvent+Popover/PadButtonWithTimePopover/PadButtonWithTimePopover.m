@@ -27,7 +27,7 @@
         [self addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         
         NSDateComponents *compDate = date.componentsOfDate;
-        self.dateOfButton = [NSDate dateWithYear:compDate.year month:compDate.month day:compDate.day];
+        self.dateOfButton = date;//[NSDate dateWithYear:compDate.year month:compDate.month day:compDate.day];
         [self setTitle:[NSDate stringTimeOfDate:date] forState:UIControlStateNormal];
     }
     
