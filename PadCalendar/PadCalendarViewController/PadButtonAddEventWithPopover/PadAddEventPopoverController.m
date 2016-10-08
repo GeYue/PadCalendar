@@ -15,6 +15,7 @@
 #import "PadButtonWithDatePopover.h"
 #import "PadButtonWithTimePopover.h"
 
+#import "QuartzCore/QuartzCore.h"
 
 @interface PadAddEventPopoverController ()
 
@@ -26,7 +27,7 @@
 @property (nonatomic, strong) PadButtonWithTimePopover *buttonTimeBegin;
 @property (nonatomic, strong) PadButtonWithTimePopover *buttonTimeEnd;
 
-@property (nonatomic, strong) UITextField *textFieldEvent;
+@property (nonatomic, strong) UITextView *textEventView;
 
 @property (nonatomic, strong) PadSearchBarWithAutoComplete *searchBarCustom;
 
@@ -63,6 +64,7 @@
     [self addButtonTimeBeginWithCustomView:self.view];
     [self addButtonTimeEndWithCustomView:self.view];
     
+    [self addTextFieldEventWithCustomView:self.view];
     return self;
 }
 
@@ -80,7 +82,7 @@
     newEvent.dateDay = self.buttonDate.dateOfButton;
     newEvent.dateTimeBegin = self.buttonTimeBegin.dateOfButton;
     newEvent.dateTimeEnd = self.buttonTimeEnd.dateOfButton;
-    newEvent.stringEventContent = self.textFieldEvent.text;
+    newEvent.stringEventContent = self.textEventView.text;
     
     NSString *stringError = nil;
     if (![self isTimeBeginEarlier:newEvent.dateTimeBegin timeEnd:newEvent.dateTimeEnd]) {
@@ -154,8 +156,17 @@
     [customView addSubview:_buttonTimeEnd];
 }
 
-- (void) addTableViewGuestsWithCustomView:(UIView *)customView {
+- (void) addTextFieldEventWithCustomView:(UIView *)customView {
+    _textEventView = [[UITextView alloc] initWithFrame:CGRectMake(0, _buttonTimeEnd.frame.origin.y+_buttonTimeEnd.frame.size.height+BUTTON_HEIGHT, customView.frame.size.width, BUTTON_HEIGHT*3)];
     
+    _textEventView.backgroundColor = [UIColor whiteColor];
+    _textEventView.font = [UIFont fontWithName:@"Arial" size:20.0f];
+    _textEventView.text = @"";
+    _textEventView.scrollEnabled = YES;
+    
+    [_textEventView.layer setCornerRadius:10];
+    
+    [customView addSubview:_textEventView];
 }
 
 #pragma mark - Button Layout
