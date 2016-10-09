@@ -50,7 +50,7 @@
     self.currentDayEvent.stringEventContent = @"";
 
     
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0., 0., 300., 700.)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0., 0., 300., 1000.)];
     [self.view setBackgroundColor:[UIColor lightGrayCustom]];
     [self.view.layer setBorderColor:[UIColor lightGrayCustom].CGColor];
     [self.view.layer setBorderWidth:2.];
@@ -78,7 +78,7 @@
 - (IBAction)buttonDoneAction:(id)sender {
     PadEvent *newEvent = [[PadEvent alloc] init];
     newEvent.stringEventName = self.searchBarCustom.stringEventName;
-    newEvent.numEventID = self.searchBarCustom.numEventID;
+    newEvent.numEventID = (self.searchBarCustom.numEventID) ? self.searchBarCustom.numEventID : [NSNumber numberWithInt:0];
     newEvent.dateDay = self.buttonDate.dateOfButton;
     newEvent.dateTimeBegin = self.buttonTimeBegin.dateOfButton;
     newEvent.dateTimeEnd = self.buttonTimeEnd.dateOfButton;
@@ -157,7 +157,7 @@
 }
 
 - (void) addTextFieldEventWithCustomView:(UIView *)customView {
-    _textEventView = [[UITextView alloc] initWithFrame:CGRectMake(0, _buttonTimeEnd.frame.origin.y+_buttonTimeEnd.frame.size.height+BUTTON_HEIGHT, customView.frame.size.width, BUTTON_HEIGHT*3)];
+    _textEventView = [[UITextView alloc] initWithFrame:CGRectMake(0, _buttonTimeEnd.frame.origin.y+_buttonTimeEnd.frame.size.height+BUTTON_HEIGHT, customView.frame.size.width, BUTTON_HEIGHT*5)];
     
     _textEventView.backgroundColor = [UIColor whiteColor];
     _textEventView.font = [UIFont fontWithName:@"Arial" size:20.0f];
@@ -183,7 +183,7 @@
 #pragma mark - UIGestureRecognizer Delegate
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    CGPoint point = [gestureRecognizer locationInView:self];
+    //CGPoint point = [gestureRecognizer locationInView:self];
     
     return NO;
 }

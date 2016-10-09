@@ -31,6 +31,7 @@
     
     [self customNavigationBarLayout];
     [self addCalendars];
+    self.dictEvents = [[NSMutableDictionary alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,7 +74,7 @@
     UIBarButtonItem *barButtonDay = [[UIBarButtonItem alloc] initWithCustomView:buttonDay];
     
     PadAddEventPopoverButton *buttonAdd = [[PadAddEventPopoverButton alloc] initWithFrame:CGRectMake(0., 0., 30., 44)];
-    
+    [buttonAdd setProtocol:self];
     UIBarButtonItem *barButtonAdd = [[UIBarButtonItem alloc] initWithCustomView:buttonAdd];
     
     [self.navigationItem setRightBarButtonItems:@[barButtonAdd, fixedItem, barButtonYear, barButtonMonth, barButtonWeek, barButtonDay]];
@@ -127,17 +128,21 @@
     NSMutableArray *arrayNew = [_dictEvents objectForKey:eventNew.dateDay];
     if (!arrayNew) {
         arrayNew = [[NSMutableArray alloc] init];
-        [_dictEvents setObject:arrayNew forKey:eventNew.dateDay];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+        NSString *strDateKey = [dateFormatter stringFromDate:eventNew.dateDay];
+        [_dictEvents setObject:arrayNew forKey:strDateKey];
     }
-    [arrayNew addObject:eventNew];
-    
+    NSData *encodeEvent = [NSKeyedArchiver archivedDataWithRootObject:eventNew];
+    [arrayNew addObject:encodeEvent];
+    [[NSUserDefaults standardUserDefaults] setObject:self.dictEvents forKey:@"appEvents"];
     [self setNewDictionary:_dictEvents];
 }
 
 #pragma mark - PadmonthCalendarView, PadWeekCalendarView, PadDayCalendarView Protocal
 
 - (void) setNewDictionary:(NSDictionary *)dict {
-    _dictEvents = (NSMutableArray *)dict;
     
     //[self.viewCalendarMonth setNewDictEvents:_dictEvents];
     //[self.viewCalendarWeek setNewDictEvents:_dictEvents];

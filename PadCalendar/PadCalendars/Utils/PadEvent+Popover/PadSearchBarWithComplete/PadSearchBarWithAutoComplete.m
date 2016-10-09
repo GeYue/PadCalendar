@@ -28,7 +28,7 @@
         NSString *strDateKey = (date) ? [dateFormatter stringFromDate:date] : @"";
         
         _arrayOfTableView = [[NSMutableArray alloc] init];
-        _arrayWithDayEvents = [[[NSUserDefaults standardUserDefaults] objectForKey:strDateKey] mutableCopy];
+        _arrayWithDayEvents = [[[[NSUserDefaults standardUserDefaults] objectForKey:@"appEvents"] objectForKey:strDateKey] mutableCopy];
         if (!_arrayWithDayEvents) {
             _arrayWithDayEvents = [[NSMutableArray alloc] init];
         }
@@ -87,8 +87,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:REUSE_IDENTIFIER_MONTH_CELL];
 
     [cell setBackgroundColor:[UIColor lightGrayCustom]];
-    //NSArray *arrayCell = [self.arrayOfTableView objectAtIndex:indexPath.row];
-    //cell.textLabel.text = [arrayCell objectAtIndex:1];
     PadEvent *event = [self.arrayOfTableView objectAtIndex:indexPath.row];
     cell.textLabel.text = event.stringEventName;
     
@@ -115,6 +113,10 @@
     [self.arrayOfTableView removeAllObjects];
     if ([searchText length] != 0) {
         [self updateArrayOfTableViewWithText:searchText];
+        
+        if (0 == self.arrayOfTableView.count) {
+            self.stringEventName = searchBar.text;
+        }
     }
     [self.tableViewCustom reloadData];
 }
@@ -134,12 +136,12 @@
 #pragma mark - Update Array of TableView
 
 -(void) updateArrayOfTableViewWithText:(NSString *)searchText {
-    for (NSArray *arrayNode in _arrayWithDayEvents) {
-        PadEvent *event = (PadEvent *)arrayNode;
+    for (id arrayNode in _arrayWithDayEvents) {
+        PadEvent *event = (PadEvent *) [NSKeyedUnarchiver unarchiveObjectWithData:arrayNode];
         NSString *string = event.stringEventName;
         NSRange r = [string rangeOfString:searchText options:NSCaseInsensitiveSearch];
         if (r.location != NSNotFound) {
-            [self.arrayOfTableView addObject:arrayNode];
+            [self.arrayOfTableView addObject:event];
         }
     }
 }
