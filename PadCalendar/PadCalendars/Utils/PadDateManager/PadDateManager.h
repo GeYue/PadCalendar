@@ -14,4 +14,8 @@
 
 @interface PadDateManager : NSObject
 
+@property (nonatomic, strong) NSDate *currentDate;
+
++ (id) sharedManager;
+
 @end

@@ -12,7 +12,10 @@
 #import "PadConstants.h"
 #import "PadCalendars.h"
 
-@interface PadYearCollectionView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+#import "PadDateManager.h"
+
+@interface PadYearCollectionView () <UICollectionViewDataSource, UICollectionViewDelegate,
+UICollectionViewDelegateFlowLayout, PadYearCellProtocol>
 
 @end
 
@@ -21,7 +24,7 @@
 #pragma mark - Lifecycle
 
 - (id) initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
-    self =  [super initWithFrame:frame collectionViewLayout:layout];
+    self = [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
         [self setBackgroundColor:[UIColor whiteColor]];
         
@@ -54,8 +57,11 @@
     [cell setProtocol:self];
     [cell initLayout];
     
-    //cell setDate:[NSDate dateWithYear:([]) month:<#(NSInteger)#> day:<#(NSInteger)#>]
+    [cell setDate:[NSDate dateWithYear:([[PadDateManager sharedManager] currentDate].componentsOfDate.year+indexPath.section-1) month:indexPath.row+1 day:1]];
     return cell;
 }
+
+#pragma mark - UICollectionView Delegate Layout
+
 
 @end
