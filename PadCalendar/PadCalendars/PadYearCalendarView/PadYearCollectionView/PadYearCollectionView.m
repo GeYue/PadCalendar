@@ -97,11 +97,24 @@ UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, PadYearCellProtocol>
     }
 }
 
+#pragma mark - UICollectionView Delegate
+
+- (void) showMonthCalendar {
+    if (_protocol && [_protocol respondsToSelector:@selector(showMonthCalendar)]) {
+        [_protocol showMonthCalendar];
+    }
+}
+
 #pragma mark - Other methods
 
 - (void) changeYear:(BOOL)isUp {
+    NSDateComponents *dateComponent = [[NSDateComponents alloc] init];
+    [dateComponent setYear:(isUp ? 1 : -1)];
     
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *date = [calendar dateByAddingComponents:dateComponent toDate:[[PadDateManager sharedManager] currentDate] options:0];
+    
+    [[PadDateManager sharedManager] setCurrentDate:date];
 }
-
 
 @end
