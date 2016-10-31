@@ -15,8 +15,8 @@
 #import "PadDateManager.h"
 
 @interface PadYearCollectionView () <UICollectionViewDataSource, UICollectionViewDelegate,
-UICollectionViewDelegateFlowLayout, PadYearCellProtocol>
-
+UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, PadYearCellProtocol>
+@property (nonatomic) CGFloat lastContentOffset;
 @end
 
 @implementation PadYearCollectionView
@@ -62,6 +62,46 @@ UICollectionViewDelegateFlowLayout, PadYearCellProtocol>
 }
 
 #pragma mark - UICollectionView Delegate Layout
+
+- (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    BOOL isLandscape = (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation));
+    
+    NSInteger lines = isLandscape ? 3 : 4;
+    NSInteger columes = isLandscape ? 4 : 3;
+    
+    CGSize sizeOfCell = CGSizeMake((self.frame.size.width-(columes-1)*SPACE_COLLECTIONVIEW_CELL_YEAR)/columes,
+                                   (self.frame.size.height-(lines-1)*SPACE_COLLECTIONVIEW_CELL_YEAR)/lines);
+    
+    return sizeOfCell;
+}
+
+- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return SPACE_COLLECTIONVIEW_CELL_YEAR;
+}
+
+- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.;
+}
+
+#pragma UIScallView Delegate
+
+- (void) scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _lastContentOffset = scrollView.contentOffset.y;
+}
+
+- (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (_lastContentOffset > scrollView.contentOffset.y) {
+        [self changeYear:NO];
+    } else if (_lastContentOffset < scrollView.contentOffset.y) {
+        [self changeYear:YES];
+    }
+}
+
+#pragma mark - Other methods
+
+- (void) changeYear:(BOOL)isUp {
+    
+}
 
 
 @end
