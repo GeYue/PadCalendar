@@ -10,4 +10,10 @@
 
 @interface PadMonthCellForYearCell : UICollectionViewCell
 
+@property (nonatomic, strong) UILabel *labelDay;
+
+- (void) initLayout;
+
+- (void) markAsCurrentDay;
+
 @end

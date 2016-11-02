@@ -65,10 +65,28 @@
     return [dateFormater stringFromDate:date];
 }
 
++ (BOOL)isTheSameDateTheCompA:(NSDateComponents *)compA compB:(NSDateComponents *)compB {
+    
+    return ([compA day]==[compB day] && [compA month]==[compB month ]&& [compA year]==[compB year]);
+}
+
 #pragma mark - Object Methods
 
 - (NSDateComponents *) componentsOfDate {
     return [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute fromDate:self];
 }
 
+- (NSInteger) numberOfDaysInMonthCount {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSRange dayRange = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:self];
+    
+    return dayRange.length;
+}
+
+- (NSInteger) numberOfWeeksInMonthCount {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSRange weekRange = [calendar rangeOfUnit:NSCalendarUnitWeekOfMonth inUnit:NSCalendarUnitMonth forDate:self];
+    
+    return weekRange.length;
+}
 @end

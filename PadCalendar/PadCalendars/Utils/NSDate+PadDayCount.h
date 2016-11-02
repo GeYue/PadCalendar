@@ -24,6 +24,12 @@
 
 + (NSString *) stringTimeOfDate:(NSDate *)date;
 
++ (BOOL) isTheSameDateTheCompA:(NSDateComponents *)compA compB:(NSDateComponents *)compB;
+
 - (NSDateComponents *) componentsOfDate;
+
+- (NSInteger) numberOfDaysInMonthCount;
+
+- (NSInteger) numberOfWeeksInMonthCount;
 
 @end

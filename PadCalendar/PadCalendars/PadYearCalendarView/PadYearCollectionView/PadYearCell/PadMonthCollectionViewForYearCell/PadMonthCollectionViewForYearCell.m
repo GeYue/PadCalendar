@@ -11,6 +11,9 @@
 #import "PadHeaderMonthForYearCell.h"
 
 #import "PadConstants.h"
+#import "PadCalendars.h"
+
+#import "PadDateManager.h"
 
 @interface PadMonthCollectionViewForYearCell() <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -49,10 +52,51 @@
 
 #pragma mark - UICollectionView DataSource
 
+- (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    _arrayDates = [[NSMutableArray alloc] init];
+    
+    NSDateComponents *compDateManager = [NSDate componentsOfDate:_date];
+    _dateFirstDayOfMonth = [NSDate dateWithYear:compDateManager.year month:compDateManager.month day:1];
+ 
+    long lastDayMonth = [_dateFirstDayOfMonth numberOfDaysInMonthCount];
+    long numOfCellsInCollection = [_dateFirstDayOfMonth numberOfWeeksInMonthCount] * 7;
+    
+    for (long i=1-(compDateManager.weekday-1),j=numOfCellsInCollection-(compDateManager.weekday-1); i<=j; i++) {
+        [_arrayDates addObject:(i >= 1 && i <= lastDayMonth) ? [NSDate dateWithYear:compDateManager.year month:compDateManager.month day:i] : [NSNull null]];
+    }
 
+    _sizeOfCells = CGSizeMake(self.frame.size.width/7, (self.frame.size.height-50.)/6);
+    return _arrayDates.count;
+}
+
+- (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    PadMonthCellForYearCell *cell = (PadMonthCellForYearCell *) [collectionView dequeueReusableCellWithReuseIdentifier:REUSE_IDENTIFIER_MONTH_CELL forIndexPath:indexPath];
+    
+    [cell initLayout];
+    
+    id obj = [_arrayDates objectAtIndex:indexPath.row];
+    if (obj != [NSNull null]) {
+        NSDate *dateCell = (NSDate *) obj;
+        NSDateComponents *components = [NSDate componentsOfDate:dateCell];
+        [cell.labelDay setText:[NSString stringWithFormat:@"%li", (long)[components day]]];
+        
+        if ([NSDate isTheSameDateTheCompA:components compB:[NSDate compoentsOfCurrentDate]]) {
+            [cell markAsCurrentDay];
+        }
+    }
+    
+    return cell;
+}
 
 #pragma mark - UICollectionView Delegate
 
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    id obj = [_arrayDates objectAtIndex:indexPath.row];
+    if (obj != [NSNull null] && _protocol && [_protocol respondsToSelector:@selector(showMonthCalendar)]) {
+        [[PadDateManager sharedManager] setCurrentDate:(NSDate *) obj];
+        [_protocol showMonthCalendar];
+    }
+}
 
 
 @end
