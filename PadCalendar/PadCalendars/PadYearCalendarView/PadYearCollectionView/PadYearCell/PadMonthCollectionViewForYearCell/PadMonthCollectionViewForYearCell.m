@@ -88,6 +88,20 @@
     return cell;
 }
 
+- (UICollectionReusableView *) collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *reuseView = nil;
+    
+    if (UICollectionElementKindSectionHeader == kind) {
+        PadHeaderMonthForYearCell *headerView = (PadHeaderMonthForYearCell *) [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:REUSE_IDENTIFIER_MONTH_HEADER forIndexPath:indexPath];
+        [headerView setDate:_date];
+        [headerView addWeekLabelWithSizeOfCells:_sizeOfCells];
+        
+        reuseView = headerView;
+    }
+    
+    return reuseView;
+}
+
 #pragma mark - UICollectionView Delegate
 
 - (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

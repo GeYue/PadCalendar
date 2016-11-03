@@ -10,4 +10,8 @@
 
 @interface PadHeaderMonthForYearCell : UICollectionReusableView
 
+@property (nonatomic, strong) NSDate *date;
+
+- (void) addWeekLabelWithSizeOfCells:(CGSize)sizeOfCells;
+
 @end

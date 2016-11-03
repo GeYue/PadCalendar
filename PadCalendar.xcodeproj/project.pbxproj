@@ -29,6 +29,8 @@
 		AC5578F61DA489D100C224D6 /* NSDate+PadDayCount.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5578F51DA489D100C224D6 /* NSDate+PadDayCount.m */; };
 		AC6305EC1DBFE910003B0870 /* PadDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6305EB1DBFE910003B0870 /* PadDateManager.m */; };
 		AC6305F01DBFEA1F003B0870 /* PadYearCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6305EF1DBFEA1F003B0870 /* PadYearCollectionView.m */; };
+		AC7E4D8F1DCAAF420028A229 /* blackCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = AC7E4D8D1DCAAF420028A229 /* blackCircle.png */; };
+		AC7E4D901DCAAF420028A229 /* redCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = AC7E4D8E1DCAAF420028A229 /* redCircle.png */; };
 		AC98583D1DA741F900C1967D /* PadTimePopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC98583C1DA741F900C1967D /* PadTimePopoverController.m */; };
 		ACA082BC1DA6493C0042C3C4 /* PadDatePopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA082BB1DA6493C0042C3C4 /* PadDatePopoverController.m */; };
 		ACC8E4721DBE75A00025F648 /* PadYearCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC8E4711DBE75A00025F648 /* PadYearCalendarView.m */; };
@@ -101,6 +103,8 @@
 		AC6305EB1DBFE910003B0870 /* PadDateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadDateManager.m; sourceTree = "<group>"; };
 		AC6305EE1DBFEA1F003B0870 /* PadYearCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadYearCollectionView.h; sourceTree = "<group>"; };
 		AC6305EF1DBFEA1F003B0870 /* PadYearCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadYearCollectionView.m; sourceTree = "<group>"; };
+		AC7E4D8D1DCAAF420028A229 /* blackCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackCircle.png; sourceTree = "<group>"; };
+		AC7E4D8E1DCAAF420028A229 /* redCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redCircle.png; sourceTree = "<group>"; };
 		AC98583B1DA741F900C1967D /* PadTimePopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadTimePopoverController.h; sourceTree = "<group>"; };
 		AC98583C1DA741F900C1967D /* PadTimePopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadTimePopoverController.m; sourceTree = "<group>"; };
 		ACA082BA1DA6493C0042C3C4 /* PadDatePopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadDatePopoverController.h; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 		AC37318E1D83DBD900D7EB04 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AC7E4D8C1DCAAEA20028A229 /* Images */,
 				AC6305E91DBFE8C0003B0870 /* PadDateManager */,
 				AC057DCB1D9AC0C2005C85AC /* PadEvent */,
 				AC24679A1D99625B00881916 /* PadEvent+Popover */,
@@ -338,6 +343,15 @@
 				AC20CECE1DC0051E008451E6 /* PadYearCollectionViewLayout.m */,
 			);
 			path = PadYearCollectionView;
+			sourceTree = "<group>";
+		};
+		AC7E4D8C1DCAAEA20028A229 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AC7E4D8D1DCAAF420028A229 /* blackCircle.png */,
+				AC7E4D8E1DCAAF420028A229 /* redCircle.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		ACC8E46F1DBE6FC70025F648 /* PadYearCalendarView */ = {
@@ -476,7 +490,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC37315D1D83B6B700D7EB04 /* LaunchScreen.storyboard in Resources */,
+				AC7E4D8F1DCAAF420028A229 /* blackCircle.png in Resources */,
 				AC37315A1D83B6B700D7EB04 /* Assets.xcassets in Resources */,
+				AC7E4D901DCAAF420028A229 /* redCircle.png in Resources */,
 				AC3731581D83B6B700D7EB04 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

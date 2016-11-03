@@ -8,14 +8,21 @@
 
 #import "PadCalendarViewController.h"
 #import "PadCalendars.h"
+#import "PadDateManager.h"
 
-@interface PadCalendarViewController () <PadButtonAddEventWithPopoverProtocol>
+#import "PadYearCalendarView.h"
+
+@interface PadCalendarViewController () <PadButtonAddEventWithPopoverProtocol, PadYearCalendarViewProtocol>
+
+@property (nonatomic) BOOL boolYearViewIsShowing;
 
 @property (nonatomic, strong) UILabel *labelWithMonthAndYear;
 @property (nonatomic, strong) NSArray *arrayButtons;
 @property (nonatomic, strong) NSArray *arrayCalendars;
 
 @property (nonatomic, strong) NSMutableDictionary *dictEvents;
+
+@property (nonatomic, strong) PadYearCalendarView *viewCalendarYear;
 
 @end
 
@@ -31,6 +38,8 @@
     
     [self customNavigationBarLayout];
     [self addCalendars];
+    [self buttonYearMonthWeekDayAction:[_arrayButtons objectAtIndex:0]];
+    
     self.dictEvents = [[NSMutableDictionary alloc] init];
 }
 
@@ -77,6 +86,7 @@
     [buttonAdd setProtocol:self];
     UIBarButtonItem *barButtonAdd = [[UIBarButtonItem alloc] initWithCustomView:buttonAdd];
     
+    _arrayButtons = @[buttonYear, buttonMonth, buttonWeek, buttonDay];
     [self.navigationItem setRightBarButtonItems:@[barButtonAdd, fixedItem, barButtonYear, barButtonMonth, barButtonWeek, barButtonDay]];
 }
 
@@ -109,17 +119,39 @@
 #pragma mark - Add Calendars
 
 - (void) addCalendars {
+    CGRect frame = CGRectMake(0., 0., self.view.frame.size.width, self.view.frame.size.height);
     
+    _viewCalendarYear = [[PadYearCalendarView alloc] initWithFrame:frame];
+    [_viewCalendarYear setProtocol:self];
+    [self.view addSubview: _viewCalendarYear];
+    
+    _arrayCalendars = @[_viewCalendarYear];
 }
 
 #pragma mark - Button Action
 
 - (IBAction)buttonYearMonthWeekDayAction:(id)sender {
+    long index = [_arrayButtons indexOfObject:sender];
+    
+    [self.view bringSubviewToFront:[_arrayCalendars objectAtIndex:index]];
+    
+    for (UIButton *button in _arrayButtons) {
+        button.selected = (button == sender);
+    }
+    
+    _boolYearViewIsShowing = (index == 0);
+    [self updateLabelWithMonthAndYear];
     
 }
 
 - (IBAction)buttonTodayAction:(id)sender {
+}
+
+- (void)updateLabelWithMonthAndYear {
     
+    NSDateComponents *comp = [NSDate componentsOfDate:[[PadDateManager sharedManager] currentDate]];
+    NSString *string = _boolYearViewIsShowing ? [NSString stringWithFormat:@"%li", (long)comp.year] : [NSString stringWithFormat:@"%@ %li", [arrayMonthName objectAtIndex:comp.month-1], (long)comp.year];
+    [_labelWithMonthAndYear setText:string];
 }
 
 #pragma mark - PadButtonAddEventWithPopoverProtocol Protocol

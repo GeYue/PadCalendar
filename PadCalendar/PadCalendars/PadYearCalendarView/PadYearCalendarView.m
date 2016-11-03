@@ -29,8 +29,8 @@
         
         _collectionViewYear = [[PadYearCollectionView alloc] initWithFrame:CGRectMake(SPACE_COLLECTIONVIEW_CELL_YEAR, SPACE_COLLECTIONVIEW_CELL_YEAR, self.frame.size.width-2*SPACE_COLLECTIONVIEW_CELL_YEAR, self.frame.size.height-2*SPACE_COLLECTIONVIEW_CELL_YEAR) collectionViewLayout:[PadYearCollectionViewLayout new]];
         [_collectionViewYear setProtocol:self];
-        
         [self addSubview:_collectionViewYear];
+        
         [self setAutoresizingMask:AR_WIDTH_HEIGHT];
         [_collectionViewYear setAutoresizingMask:AR_WIDTH_HEIGHT | AR_TOP_BOTTOM];
     }

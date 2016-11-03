@@ -7,6 +7,7 @@
 //
 
 #import "PadYearCollectionView.h"
+#import "PadYearCollectionViewLayout.h"
 #import "PadYearCell.h"
 
 #import "PadConstants.h"
@@ -23,8 +24,19 @@ UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, PadYearCellProtocol>
 
 #pragma mark - Lifecycle
 
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
+
+
 - (id) initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
-    self = [super initWithFrame:frame collectionViewLayout:layout];
+    //self = [super initWithFrame:frame collectionViewLayout:layout];
+    self = [super initWithFrame:frame collectionViewLayout:[PadYearCollectionViewLayout new]];
     if (self) {
         [self setBackgroundColor:[UIColor whiteColor]];
         
