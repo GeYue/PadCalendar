@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PadYearCollectionViewLayout : UICollectionViewLayout
+@interface PadYearCollectionViewLayout : UICollectionViewFlowLayout
 
 @end

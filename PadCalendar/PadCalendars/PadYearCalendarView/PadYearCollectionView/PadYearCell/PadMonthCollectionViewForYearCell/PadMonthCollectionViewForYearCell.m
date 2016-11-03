@@ -36,7 +36,7 @@
 }
 
 - (id) initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
-    self = [super initWithFrame:frame collectionViewLayout:[UICollectionViewLayout new]];
+    self = [super initWithFrame:frame collectionViewLayout:[UICollectionViewFlowLayout new]];
     if (self) {
         [self setUserInteractionEnabled:YES];
         [self setDataSource:self];
@@ -112,5 +112,24 @@
     }
 }
 
+
+#pragma mark - UICollectionViewDelegateFlowlayout
+
+- (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return _sizeOfCells;
+}
+
+- (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    CGSize headerViewSize = CGSizeMake(self.frame.size.width, 50.);
+    return headerViewSize;
+}
+
+- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.;
+}
+
+- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.;
+}
 
 @end

@@ -26,7 +26,7 @@
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dateChanged:) name:DATE_MANAGER_DATE_CHANGED object:nil];
         [self setBackgroundColor:[UIColor whiteColor]];
-        
+
         _collectionViewYear = [[PadYearCollectionView alloc] initWithFrame:CGRectMake(SPACE_COLLECTIONVIEW_CELL_YEAR, SPACE_COLLECTIONVIEW_CELL_YEAR, self.frame.size.width-2*SPACE_COLLECTIONVIEW_CELL_YEAR, self.frame.size.height-2*SPACE_COLLECTIONVIEW_CELL_YEAR) collectionViewLayout:[PadYearCollectionViewLayout new]];
         [_collectionViewYear setProtocol:self];
         [self addSubview:_collectionViewYear];
