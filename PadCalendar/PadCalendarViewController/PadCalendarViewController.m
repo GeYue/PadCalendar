@@ -26,7 +26,6 @@
 
 @end
 
-#define DATEMANAGER_DATE_CHANGED    @"com.GeYue.Developer.Padcalendar.DataeManager.DateChanged"
 @implementation PadCalendarViewController
 
 #pragma makr - Lifecycle
@@ -34,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dateChanged:) name:DATEMANAGER_DATE_CHANGED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dateChanged:) name:DATE_MANAGER_DATE_CHANGED object:nil];
     
     [self customNavigationBarLayout];
     [self addCalendars];
@@ -50,7 +49,7 @@
 #pragma mark - Notifications
 
 - (void) dateChanged:(NSNotification *)notification {
-    
+    [self updateLabelWithMonthAndYear];
 }
 
 #pragma mark - Custom NavigatorBar
