@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong) PadYearCalendarView *viewCalendarYear;
 
+@property (nonatomic) BOOL boolDidLoad;
+
 @end
 
 @implementation PadCalendarViewController
@@ -40,6 +42,15 @@
     [self buttonYearMonthWeekDayAction:[_arrayButtons objectAtIndex:0]];
     
     self.dictEvents = [[NSMutableDictionary alloc] init];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (!_boolDidLoad) {
+        _boolDidLoad = YES;
+        [self buttonTodayAction:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -144,6 +155,9 @@
 }
 
 - (IBAction)buttonTodayAction:(id)sender {
+    [[PadDateManager sharedManager] setCurrentDate:[NSDate dateWithYear:[NSDate compoentsOfCurrentDate].year
+                                                                  month:[NSDate compoentsOfCurrentDate].month
+                                                                    day:[NSDate compoentsOfCurrentDate].day]];
 }
 
 - (void)updateLabelWithMonthAndYear {
