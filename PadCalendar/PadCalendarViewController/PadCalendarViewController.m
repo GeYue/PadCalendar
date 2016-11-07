@@ -207,4 +207,9 @@
         }
     }
 }
+
+- (void) showMonthCalendar {
+    [self buttonYearMonthWeekDayAction:[_arrayButtons objectAtIndex:1]];
+}
+
 @end
