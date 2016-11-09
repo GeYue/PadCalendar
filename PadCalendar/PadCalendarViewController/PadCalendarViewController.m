@@ -155,9 +155,9 @@
 }
 
 - (IBAction)buttonTodayAction:(id)sender {
-    [[PadDateManager sharedManager] setCurrentDate:[NSDate dateWithYear:[NSDate compoentsOfCurrentDate].year
-                                                                  month:[NSDate compoentsOfCurrentDate].month
-                                                                    day:[NSDate compoentsOfCurrentDate].day]];
+    [[PadDateManager sharedManager] setCurrentDate:[NSDate dateWithYear:[NSDate componentsOfCurrentDate].year
+                                                                  month:[NSDate componentsOfCurrentDate].month
+                                                                    day:[NSDate componentsOfCurrentDate].day]];
 }
 
 - (void)updateLabelWithMonthAndYear {

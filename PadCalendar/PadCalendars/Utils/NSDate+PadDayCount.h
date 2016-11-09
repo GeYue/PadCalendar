@@ -12,7 +12,7 @@
 
 + (NSDateComponents *) componentsOfDate:(NSDate *)date;
 
-+ (NSDateComponents *) compoentsOfCurrentDate;
++ (NSDateComponents *) componentsOfCurrentDate;
 
 + (NSDate *) dateWithHour:(NSInteger)hour min:(NSInteger)min;
 

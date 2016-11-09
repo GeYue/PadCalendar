@@ -80,7 +80,7 @@
         NSDateComponents *components = [NSDate componentsOfDate:dateCell];
         [cell.labelDay setText:[NSString stringWithFormat:@"%li", (long)[components day]]];
         
-        if ([NSDate isTheSameDateTheCompA:components compB:[NSDate compoentsOfCurrentDate]]) {
+        if ([NSDate isTheSameDateTheCompA:components compB:[NSDate componentsOfCurrentDate]]) {
             [cell markAsCurrentDay];
         }
     }

@@ -41,7 +41,7 @@
 
 - (id) initPopover {
     
-    NSDateComponents *component = [NSDate compoentsOfCurrentDate];
+    NSDateComponents *component = [NSDate componentsOfCurrentDate];
     self.currentDayEvent = [[PadEvent alloc] init];
     self.currentDayEvent.stringEventName = @"";
     self.currentDayEvent.dateDay = [NSDate date];

@@ -17,7 +17,7 @@
     return [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear | NSCalendarUnitWeekday | NSCalendarUnitWeekOfMonth | NSCalendarUnitHour  | NSCalendarUnitMinute fromDate:date];
 }
 
-+ (NSDateComponents *) compoentsOfCurrentDate {
++ (NSDateComponents *) componentsOfCurrentDate {
     return [NSDate componentsOfDate:[NSDate date]];
 }
 
