@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AC057DCE1D9AC10E005C85AC /* PadEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = AC057DCD1D9AC10E005C85AC /* PadEvent.m */; };
+		AC1E5AA21DD3B4F200FAE005 /* PadMonthCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1E5AA11DD3B4F200FAE005 /* PadMonthCalendarView.m */; };
+		AC1E5AA71DD3B6D400FAE005 /* PadMonthHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1E5AA61DD3B6D400FAE005 /* PadMonthHeaderView.m */; };
+		AC1E5AAA1DD3B70E00FAE005 /* PadMonthCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1E5AA91DD3B70E00FAE005 /* PadMonthCollectionView.m */; };
 		AC1F50031DC7CEBD005A8B6D /* PadMonthCollectionViewForYearCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1F50021DC7CEBD005A8B6D /* PadMonthCollectionViewForYearCell.m */; };
 		AC1F50091DC7DC71005A8B6D /* PadMonthCellForYearCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1F50081DC7DC71005A8B6D /* PadMonthCellForYearCell.m */; };
 		AC1F500C1DC7DEA0005A8B6D /* PadHeaderMonthForYearCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1F500B1DC7DEA0005A8B6D /* PadHeaderMonthForYearCell.m */; };
@@ -60,6 +63,12 @@
 		AC057DCC1D9AC10E005C85AC /* PadEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadEvent.h; sourceTree = "<group>"; };
 		AC057DCD1D9AC10E005C85AC /* PadEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadEvent.m; sourceTree = "<group>"; };
 		AC0CF9401D8C2DF000328B31 /* PadConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadConstants.h; sourceTree = "<group>"; };
+		AC1E5AA01DD3B4F200FAE005 /* PadMonthCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadMonthCalendarView.h; sourceTree = "<group>"; };
+		AC1E5AA11DD3B4F200FAE005 /* PadMonthCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadMonthCalendarView.m; sourceTree = "<group>"; };
+		AC1E5AA51DD3B6D400FAE005 /* PadMonthHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadMonthHeaderView.h; sourceTree = "<group>"; };
+		AC1E5AA61DD3B6D400FAE005 /* PadMonthHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadMonthHeaderView.m; sourceTree = "<group>"; };
+		AC1E5AA81DD3B70E00FAE005 /* PadMonthCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadMonthCollectionView.h; sourceTree = "<group>"; };
+		AC1E5AA91DD3B70E00FAE005 /* PadMonthCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadMonthCollectionView.m; sourceTree = "<group>"; };
 		AC1F50011DC7CEBD005A8B6D /* PadMonthCollectionViewForYearCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadMonthCollectionViewForYearCell.h; sourceTree = "<group>"; };
 		AC1F50021DC7CEBD005A8B6D /* PadMonthCollectionViewForYearCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadMonthCollectionViewForYearCell.m; sourceTree = "<group>"; };
 		AC1F50071DC7DC71005A8B6D /* PadMonthCellForYearCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadMonthCellForYearCell.h; sourceTree = "<group>"; };
@@ -151,6 +160,35 @@
 				AC057DCD1D9AC10E005C85AC /* PadEvent.m */,
 			);
 			path = PadEvent;
+			sourceTree = "<group>";
+		};
+		AC1E5A9F1DD3B49C00FAE005 /* PadMonthCalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				AC1E5AA41DD3B66600FAE005 /* PadMonthCollectionView */,
+				AC1E5AA31DD3B65100FAE005 /* PadMonthHeaderView */,
+				AC1E5AA01DD3B4F200FAE005 /* PadMonthCalendarView.h */,
+				AC1E5AA11DD3B4F200FAE005 /* PadMonthCalendarView.m */,
+			);
+			path = PadMonthCalendarView;
+			sourceTree = "<group>";
+		};
+		AC1E5AA31DD3B65100FAE005 /* PadMonthHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				AC1E5AA51DD3B6D400FAE005 /* PadMonthHeaderView.h */,
+				AC1E5AA61DD3B6D400FAE005 /* PadMonthHeaderView.m */,
+			);
+			path = PadMonthHeaderView;
+			sourceTree = "<group>";
+		};
+		AC1E5AA41DD3B66600FAE005 /* PadMonthCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				AC1E5AA81DD3B70E00FAE005 /* PadMonthCollectionView.h */,
+				AC1E5AA91DD3B70E00FAE005 /* PadMonthCollectionView.m */,
+			);
+			path = PadMonthCollectionView;
 			sourceTree = "<group>";
 		};
 		AC1F50001DC7CE35005A8B6D /* PadMonthCollectionViewForYearCell */ = {
@@ -261,6 +299,7 @@
 		AC37318C1D83DA3100D7EB04 /* PadCalendars */ = {
 			isa = PBXGroup;
 			children = (
+				AC1E5A9F1DD3B49C00FAE005 /* PadMonthCalendarView */,
 				ACC8E46F1DBE6FC70025F648 /* PadYearCalendarView */,
 				AC37318D1D83DA8C00D7EB04 /* PadCalendars.h */,
 				AC37318E1D83DBD900D7EB04 /* Utils */,
@@ -521,12 +560,15 @@
 				ACCD804B1D9D60B100E61668 /* PadButtonWithTimePopover.m in Sources */,
 				AC1F50091DC7DC71005A8B6D /* PadMonthCellForYearCell.m in Sources */,
 				AC3731961D83DF1300D7EB04 /* UIColor+PadMoreColors.m in Sources */,
+				AC1E5AA71DD3B6D400FAE005 /* PadMonthHeaderView.m in Sources */,
 				AC37319D1D83E58100D7EB04 /* UIImage+PadCustomMethods.m in Sources */,
 				ACCD80481D9D609B00E61668 /* PadButtonWithDatePopover.m in Sources */,
 				AC1F500C1DC7DEA0005A8B6D /* PadHeaderMonthForYearCell.m in Sources */,
 				AC37319A1D83E1BD00D7EB04 /* PadRedAndWhiteButton.m in Sources */,
 				AC1F50031DC7CEBD005A8B6D /* PadMonthCollectionViewForYearCell.m in Sources */,
 				AC4DE6D41D9D5F5800F8D67B /* PadSearchBarWithAutoComplete.m in Sources */,
+				AC1E5AA21DD3B4F200FAE005 /* PadMonthCalendarView.m in Sources */,
+				AC1E5AAA1DD3B70E00FAE005 /* PadMonthCollectionView.m in Sources */,
 				AC057DCE1D9AC10E005C85AC /* PadEvent.m in Sources */,
 				AC539B211D86D14B007ADE60 /* PadAddEventPopoverController.m in Sources */,
 				AC3731521D83B6B700D7EB04 /* AppDelegate.m in Sources */,
