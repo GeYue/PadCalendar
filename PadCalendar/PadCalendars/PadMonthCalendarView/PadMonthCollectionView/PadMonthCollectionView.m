@@ -13,7 +13,7 @@
 #import "PadCalendars.h"
 #import "PadDateManager.h"
 
-@interface PadMonthCollectionView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, PadMonthCellProtocol>
+@interface PadMonthCollectionView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, PadMonthCellProtocol>
 
 @property (nonatomic) CGFloat lastContentOffset;
 @property (nonatomic, strong) NSMutableArray *arraySizeOfCells;
@@ -115,5 +115,79 @@
 
 #pragma mark - UICollectionView Delegate FlowLayout
 
+- (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return [[_arraySizeOfCells objectAtIndex:indexPath.section] CGSizeValue];
+}
+
+- (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    CGSize headViewSize = CGSizeMake(self.frame.size.width, SPACE_COLLECTIONVIEW_CELL);
+    
+    return headViewSize;
+}
+
+- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return SPACE_COLLECTIONVIEW_CELL;
+}
+
+- (CGFloat) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return SPACE_COLLECTIONVIEW_CELL;
+}
+
+#pragma mark - UIScrollView Delegate
+
+- (void) scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    _lastContentOffset = scrollView.contentOffset.y;
+}
+
+- (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (_lastContentOffset > scrollView.contentOffset.y) {
+        [self changeYearDirectionIsUp:NO];
+    } else if (_lastContentOffset < scrollView.contentOffset.y) {
+        [self  changeYearDirectionIsUp:YES];
+    }
+}
+
+#pragma mark - Other Method
+
+- (void) changeYearDirectionIsUp:(BOOL)isUp {
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setMonth:isUp?1:-1];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDate *newDate = [calendar dateByAddingComponents:dateComponents toDate:[_arrayWithFirstDay objectAtIndex:1] options:0];
+    
+    [[PadDateManager sharedManager] setCurrentDate:newDate];
+}
+
+#pragma mark - PadMonthCell Protocol
+
+- (void) saveEditedEvent:(PadEvent *)eventNew ofCell:(UICollectionViewCell *)cell atIndex:(NSInteger)index {
+    NSDate *dateNew = eventNew.dateDay;
+    NSMutableArray *arrayNew = [_dictEvents objectForKey:dateNew];
+    if (!arrayNew) {
+        arrayNew = [NSMutableArray new];
+        [_dictEvents setObject:arrayNew forKey:dateNew];
+    }
+    [arrayNew addObject:eventNew];
+}
+
+- (void) deleteEventOfCell:(UICollectionViewCell *)cell atIndex:(NSInteger)intIndex {
+    NSMutableArray *arrayDates = [_dispWeeksArray objectAtIndex:[self indexPathForCell:cell].section];
+    
+    NSIndexPath *index = [self indexPathForCell:cell];
+    NSDate *date = [arrayDates objectAtIndex:index.row];
+    NSMutableArray *arrayDict = [_dictEvents objectForKey:date];
+    
+    [arrayDict removeObjectAtIndex:intIndex];
+    if (arrayDict.count == 0) {
+        [_dictEvents removeObjectForKey:date];
+    }
+    
+    if (_protocol && [_protocol respondsToSelector:@selector(setNewDictionary:)]) {
+        [_protocol setNewDictionary:_dictEvents];
+    } else {
+        [self reloadData];
+    }
+}
 
 @end

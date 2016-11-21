@@ -9,6 +9,15 @@
 #ifndef PadConstants_h
 #define PadConstants_h
 
+typedef enum ScrollDirection {
+    ScrollDirectionNone,
+    ScrollDirectionRight,
+    ScrollDirectionLeft,
+    ScrollDirectionUp,
+    ScrollDirectionDown,
+    ScrollDirectionCrazy,
+} ScrollDirection;
+
 #define BUTTON_HEIGHT 44.
 #define REUSE_IDENTIFIER_MONTH_CELL @"monthCell"
 
