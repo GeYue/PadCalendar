@@ -21,6 +21,9 @@
 @property (nonatomic, strong) id<PadMonthCellProtocol> protocol;
 @property (strong, nonatomic) UILabel *labelDay;
 
+@property (strong, nonatomic) UIImageView *imageViewCircle;
+@property (nonatomic, strong) NSMutableArray *arrayEvents;
+
 - (void) initLayout;
 - (void) markAsWeekend;
 - (void) markAsCurrentDay;

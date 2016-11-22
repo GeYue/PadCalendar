@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PadEvent.h"
+
+@protocol PadButtonWithEditAndDetailPopoversForMonthCellProtocol <NSObject>
+
+@required
+- (void) saveEditedEvent:(PadEvent *)eventNew ofButton:(UIButton *)button;
+- (void) deleteEventOfButton:(UIButton *)button;
+
+@end
+
 @interface PadButtonWithEditAndDetailPopoversForMonthCell : UIButton
 
 @end
