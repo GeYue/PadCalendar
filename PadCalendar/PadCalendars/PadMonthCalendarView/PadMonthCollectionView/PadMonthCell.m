@@ -33,7 +33,7 @@
         [_imageViewCircle setAutoresizingMask:(UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin)];
         [self addSubview:_imageViewCircle];
         
-        _labelDay = [[UILabel alloc] initWithFrame:CGRectMake((_imageViewCircle.frame.size.width-20.)/2, (_imageViewCircle.frame.size.height-20.)/2, 20., 20.)];
+        _labelDay = [[UILabel alloc] initWithFrame:CGRectMake((_imageViewCircle.frame.size.width-20.)/2, (_imageViewCircle.frame.size.height-20.)/2, 22., 22.)];
         [_labelDay setAutoresizingMask:(UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin)];
         [_labelDay setTextAlignment:NSTextAlignmentCenter];
         [_imageViewCircle addSubview:_labelDay];
