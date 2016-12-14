@@ -20,4 +20,7 @@
 
 @interface PadButtonWithEditAndDetailPopoversForMonthCell : UIButton
 
+@property (nonatomic, strong) id<PadButtonWithEditAndDetailPopoversForMonthCellProtocol> protocol;
+@property (nonatomic, strong) PadEvent *event;
+
 @end

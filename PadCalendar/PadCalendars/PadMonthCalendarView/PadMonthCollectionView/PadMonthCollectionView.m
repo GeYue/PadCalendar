@@ -103,7 +103,7 @@
         NSDate *date = (NSDate *) object;
         NSDateComponents *components = [NSDate componentsOfDate:date];
 
-        //[cell setArrayEvents:[dictEvents objectForKey:date]];
+        [cell setArrayEvents:[_dictEvents objectForKey:date]];
         [cell.labelDay setText:[NSString stringWithFormat:@"%li", (long)[components day]]];
         
         if ([NSDate isTheSameDateTheCompA:components compB:[NSDate componentsOfCurrentDate]]) {
