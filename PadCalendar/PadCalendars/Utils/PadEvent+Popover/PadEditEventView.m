@@ -149,27 +149,51 @@
 }
 
 - (void) addSearchBar {
-    
+    _searchBarCustom = [[PadSearchBarWithAutoComplete alloc] initWithFrame:CGRectMake(0, _buttonCalcel.superview.frame.origin.y+_buttonCalcel.superview.frame.size.height+BUTTON_HEIGHT, self.frame.size.width, BUTTON_HEIGHT)];
+    [_searchBarCustom setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+    [_searchBarCustom setNumEventID:_event.numEventID];
+    [self addSubview:_searchBarCustom];
 }
 
 - (void) addButtonDate {
-    
+    _buttonDate = [[PadButtonWithDatePopover alloc] initWithFrame:CGRectMake(0, _searchBarCustom.frame.origin.y+_searchBarCustom.frame.size.height+2, self.frame.size.width, BUTTON_HEIGHT) date:_event.dateDay];
+    [_buttonDate setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+    [self addSubview:_buttonDate];
 }
 
 - (void) addButtonTimeBegin {
-    
+    _buttonTimeBegin = [[PadButtonWithTimePopover alloc] initWithFrame:CGRectMake(0, _buttonDate.frame.origin.y+_buttonDate.frame.size.height+BUTTON_HEIGHT, self.frame.size.width, BUTTON_HEIGHT) date:_event.dateTimeBegin];
+    [_buttonTimeBegin setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+    [self addSubview:_buttonTimeBegin];
 }
 
 - (void) addButtonTimeEnd {
-    
+    _buttonTimeEnd = [[PadButtonWithTimePopover alloc] initWithFrame:CGRectMake(0, _buttonTimeBegin.frame.origin.y+_buttonTimeBegin.frame.size.height+2, self.frame.size.width, BUTTON_HEIGHT) date:_event.dateTimeEnd];
+    [_buttonTimeEnd setAutoresizingMask:UIViewAutoresizingFlexibleWidth];
+    [self addSubview:_buttonTimeEnd];
 }
 
 - (void) addButtonDelete {
+    _buttonDelete = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_buttonDelete setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+    [self customLayoutOfButton:_buttonDelete withTitle:@"Delete Event" action:@selector(buttonDeleteAction:) frame:CGRectMake(0, self.frame.size.height-2*BUTTON_HEIGHT, self.frame.size.width, 2*BUTTON_HEIGHT)];
+    [_buttonDelete setBackgroundColor:[UIColor whiteColor]];
+    [self addSubview:_buttonDelete];
     
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, _buttonDelete.frame.origin.y-BUTTON_HEIGHT, self.frame.size.width, BUTTON_HEIGHT)];
+    [view setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+    [self addSubview:view];
 }
 
 - (void) addTextView {
+    _textEventView = [[UITextView alloc] initWithFrame:CGRectMake(0, _buttonTimeEnd.frame.origin.y+_buttonTimeEnd.frame.size.height+BUTTON_HEIGHT, self.frame.size.width, BUTTON_HEIGHT*5)];
+    [_textEventView setBackgroundColor:[UIColor whiteColor]];
+    [_textEventView setFont:[UIFont fontWithName:@"Arial" size:20.0f]];
+    _textEventView.text = @"";
+    [_textEventView setScrollEnabled:YES];
     
+    [_textEventView.layer setCornerRadius:10];
+    [self addSubview:_textEventView];
 }
 
 #pragma mark - Button Layout
@@ -186,10 +210,12 @@
 #pragma mark - UIGestureRecognizer Delegate
 
 - (BOOL) gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    CGPoint point = [gestureRecognizer locationInView:self];
+    BOOL bRet = NO;
+    //CGPoint point = [gestureRecognizer locationInView:self];
     
-    return !(_searchBarCustom.arrayOfTableView.count != 0 && CGRectContainsPoint(_searchBarCustom.tableViewCustom.frame, point)) &&
-    _searchBarCustom.tableViewCustom.superview;
+    //bRet = !(_searchBarCustom.arrayOfTableView.count != 0 && CGRectContainsPoint(_searchBarCustom.tableViewCustom.frame, point)) &&
+    //_searchBarCustom.tableViewCustom.superview;
+    return bRet;
 }
 
 @end
