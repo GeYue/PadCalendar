@@ -42,6 +42,7 @@
 		AC7E4D901DCAAF420028A229 /* redCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = AC7E4D8E1DCAAF420028A229 /* redCircle.png */; };
 		AC98583D1DA741F900C1967D /* PadTimePopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC98583C1DA741F900C1967D /* PadTimePopoverController.m */; };
 		ACA082BC1DA6493C0042C3C4 /* PadDatePopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA082BB1DA6493C0042C3C4 /* PadDatePopoverController.m */; };
+		ACC6D5F51E04A63D0010BB16 /* PadEditEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC6D5F41E04A63D0010BB16 /* PadEditEventViewController.m */; };
 		ACC8E4721DBE75A00025F648 /* PadYearCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC8E4711DBE75A00025F648 /* PadYearCalendarView.m */; };
 		ACCD80481D9D609B00E61668 /* PadButtonWithDatePopover.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCD80471D9D609B00E61668 /* PadButtonWithDatePopover.m */; };
 		ACCD804B1D9D60B100E61668 /* PadButtonWithTimePopover.m in Sources */ = {isa = PBXBuildFile; fileRef = ACCD804A1D9D60B100E61668 /* PadButtonWithTimePopover.m */; };
@@ -136,6 +137,8 @@
 		AC98583C1DA741F900C1967D /* PadTimePopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadTimePopoverController.m; sourceTree = "<group>"; };
 		ACA082BA1DA6493C0042C3C4 /* PadDatePopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadDatePopoverController.h; sourceTree = "<group>"; };
 		ACA082BB1DA6493C0042C3C4 /* PadDatePopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadDatePopoverController.m; sourceTree = "<group>"; };
+		ACC6D5F31E04A63D0010BB16 /* PadEditEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadEditEventViewController.h; sourceTree = "<group>"; };
+		ACC6D5F41E04A63D0010BB16 /* PadEditEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadEditEventViewController.m; sourceTree = "<group>"; };
 		ACC8E4701DBE75A00025F648 /* PadYearCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadYearCalendarView.h; sourceTree = "<group>"; };
 		ACC8E4711DBE75A00025F648 /* PadYearCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PadYearCalendarView.m; sourceTree = "<group>"; };
 		ACCD80461D9D609B00E61668 /* PadButtonWithDatePopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PadButtonWithDatePopover.h; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 				AC4DE6D11D9D5EA300F8D67B /* PadSearchBarWithComplete */,
 				AC33C7B51E03880C00EB8711 /* PadEditEventView.h */,
 				AC33C7B61E03880C00EB8711 /* PadEditEventView.m */,
+				ACC6D5F31E04A63D0010BB16 /* PadEditEventViewController.h */,
+				ACC6D5F41E04A63D0010BB16 /* PadEditEventViewController.m */,
 			);
 			path = "PadEvent+Popover";
 			sourceTree = "<group>";
@@ -618,6 +623,7 @@
 				AC1F50031DC7CEBD005A8B6D /* PadMonthCollectionViewForYearCell.m in Sources */,
 				AC4DE6D41D9D5F5800F8D67B /* PadSearchBarWithAutoComplete.m in Sources */,
 				AC1E5AA21DD3B4F200FAE005 /* PadMonthCalendarView.m in Sources */,
+				ACC6D5F51E04A63D0010BB16 /* PadEditEventViewController.m in Sources */,
 				AC1E5AAA1DD3B70E00FAE005 /* PadMonthCollectionView.m in Sources */,
 				AC057DCE1D9AC10E005C85AC /* PadEvent.m in Sources */,
 				AC3F69E41DE4F36000290032 /* PadButtonWithEditAndDetailPopoversForMonthCell.m in Sources */,

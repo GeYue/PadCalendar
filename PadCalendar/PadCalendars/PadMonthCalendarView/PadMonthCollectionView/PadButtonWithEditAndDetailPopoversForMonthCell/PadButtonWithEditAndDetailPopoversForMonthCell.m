@@ -43,7 +43,19 @@
         _popoverContentController = [[PadEventContentPopoverController alloc] initWithEvent:_event];
         [_popoverContentController setProtocol:self];
         
+        UIResponder *responder = self;
+        while ((responder = [responder nextResponder])) {
+            if ([responder isKindOfClass:[UIViewController class]])
+                break;
+        }
+        UIViewController *responderController = (UIViewController *)responder;
+        [responderController presentViewController:_popoverContentController animated:YES completion:nil];
+        UIPopoverPresentationController *presentController = [_popoverContentController popoverPresentationController];
+        presentController.permittedArrowDirections = UIPressTypeUpArrow;
         
+        UIButton *button = (UIButton *)sender;
+        presentController.sourceView = sender;
+        presentController.sourceRect = CGRectMake(0, 0, button.frame.size.width, button.frame.size.height);
     }
 }
 
@@ -52,5 +64,9 @@
 - (void) showPopoverEditWithEvent:(PadEvent *)event {
     
 }
+
+#pragma mark -  Protocol
+
+
 
 @end
