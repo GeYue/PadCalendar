@@ -16,5 +16,5 @@
 @property (nonatomic, strong) NSNumber *numEventID;
 
 - (id) initWithDateAndFrame:(NSDate*)date Frame:(CGRect)frame;
-
+- (void) closeKeyboardAndTableView;
 @end
