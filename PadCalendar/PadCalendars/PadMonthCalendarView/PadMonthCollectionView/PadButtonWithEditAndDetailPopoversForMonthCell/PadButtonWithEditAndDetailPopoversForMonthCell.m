@@ -9,10 +9,11 @@
 #import "PadButtonWithEditAndDetailPopoversForMonthCell.h"
 
 #import "PadEventContentPopoverController.h"
+#import "PadEditEventViewController.h"
 
-@interface PadButtonWithEditAndDetailPopoversForMonthCell() <PadEventContentPopoverControllerProtocol>
+@interface PadButtonWithEditAndDetailPopoversForMonthCell() <PadEventContentPopoverControllerProtocol, PadEditEventViewControllerProtocol>
 @property (nonatomic, strong) PadEventContentPopoverController *popoverContentController;
-
+@property (nonatomic, strong) PadEditEventViewController *popoverEditEventController;
 @end
 
 @implementation PadButtonWithEditAndDetailPopoversForMonthCell
@@ -62,11 +63,37 @@
 #pragma mark - PadEventContentPopoverController Protocol
 
 - (void) showPopoverEditWithEvent:(PadEvent *)event {
+    _popoverEditEventController = [[PadEditEventViewController alloc] initWithEvent:_event];
+    [_popoverEditEventController setProtocol:self];
     
+    UIResponder *responder = self;
+    while ((responder = [responder nextResponder])) {
+        if ([responder isKindOfClass:[UIViewController class]])
+            break;
+    }
+    UIViewController *responderController = (UIViewController *)responder;
+    [responderController presentViewController:_popoverContentController animated:YES completion:nil];
+    UIPopoverPresentationController *presentController = [_popoverContentController popoverPresentationController];
+    presentController.permittedArrowDirections = UIPressTypeUpArrow;
+    
+    presentController.sourceView = _popoverContentController.view;
+    presentController.sourceRect = CGRectMake(0, 0,
+                                              _popoverContentController.view.frame.size.width,
+                                              _popoverContentController.view.frame.size.height);
 }
 
-#pragma mark -  Protocol
+#pragma mark -  PadEditEventViewController Protocol
 
+- (void) saveEditedEvent:(PadEvent *)eventNew {
+    if (_protocol && [_protocol respondsToSelector:@selector(saveEditedEvent:)]) {
+        [_protocol saveEditedEvent:eventNew ofButton:self];
+    }
+}
 
+- (void) deleteEvent {
+    if (_protocol && [_protocol respondsToSelector:@selector(deleteEventOfButton:)]){
+        [_protocol deleteEventOfButton:self];
+    }
+}
 
 @end
