@@ -11,8 +11,9 @@
 #import "PadDateManager.h"
 
 #import "PadYearCalendarView.h"
+#import "PadMonthCalendarView.h"
 
-@interface PadCalendarViewController () <PadButtonAddEventWithPopoverProtocol, PadYearCalendarViewProtocol>
+@interface PadCalendarViewController () <PadButtonAddEventWithPopoverProtocol, PadYearCalendarViewProtocol, PadMonthCalendarViewProtocol>
 
 @property (nonatomic) BOOL boolYearViewIsShowing;
 
@@ -23,6 +24,7 @@
 @property (nonatomic, strong) NSMutableDictionary *dictEvents;
 
 @property (nonatomic, strong) PadYearCalendarView *viewCalendarYear;
+@property (nonatomic, strong) PadMonthCalendarView *viewCalendarMonth;
 
 @property (nonatomic) BOOL boolDidLoad;
 
@@ -135,7 +137,12 @@
     [_viewCalendarYear setProtocol:self];
     [self.view addSubview: _viewCalendarYear];
     
-    _arrayCalendars = @[_viewCalendarYear];
+    _viewCalendarMonth = [[PadMonthCalendarView alloc] initWithFrame:frame];
+    [_viewCalendarMonth setProtocol:self];
+    [_viewCalendarMonth setDictEvents:_dictEvents];
+    [self.view addSubview:_viewCalendarMonth];
+    
+    _arrayCalendars = @[_viewCalendarYear, _viewCalendarMonth];
 }
 
 #pragma mark - Button Action
